@@ -1,5 +1,5 @@
 ---
-title: Training large language models
+title: Building large language models
 ---
 Mon Jan 31
 : Modeling

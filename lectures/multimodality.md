@@ -1,13 +1,11 @@
 ---
 layout: page
 grand_parent: Lectures
-parent: Behavior
-title: Disinformation
-nav_order: 2.4
+parent: Beyond
+title: Multimodality
+nav_order: 5.1
 usemathjax: true
 ---
 *UNDER CONSTRUCTION*
-
-## Disinformation
 
 ## Further reading

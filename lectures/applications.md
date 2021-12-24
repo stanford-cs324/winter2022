@@ -1,8 +1,9 @@
 ---
 layout: page
-parent: Lectures
+grand_parent: Lectures
+parent: Behavior
 title: Applications
-nav_order: 3
+nav_order: 2.1
 usemathjax: true
 ---
 *UNDER CONSTRUCTION*
@@ -10,3 +11,5 @@ usemathjax: true
 ## Applications
 
 How are language models used?
+
+## Further reading

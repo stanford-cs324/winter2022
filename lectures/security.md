@@ -1,13 +1,11 @@
 ---
 layout: page
 grand_parent: Lectures
-parent: Behavior
-title: Disinformation
-nav_order: 2.4
+parent: Data
+title: Security
+nav_order: 3.2
 usemathjax: true
 ---
 *UNDER CONSTRUCTION*
-
-## Disinformation
 
 ## Further reading

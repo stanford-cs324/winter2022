@@ -1,13 +1,13 @@
 ---
 layout: page
 grand_parent: Lectures
-parent: Behavior
-title: Disinformation
-nav_order: 2.4
+parent: Building
+title: Modeling
+nav_order: 4.2
 usemathjax: true
 ---
 *UNDER CONSTRUCTION*
 
-## Disinformation
+## Transformer
 
 ## Further reading
