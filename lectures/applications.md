@@ -12,4 +12,12 @@ usemathjax: true
 
 How are language models used?
 
+prompting versus fine-tuning
+
+Evaluation
+
+perplexity
+
+tasks: question answering, summarization
+
 ## Further reading
