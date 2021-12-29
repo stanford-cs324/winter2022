@@ -3,7 +3,7 @@ title: Behavior of large language models
 ---
 
 Mon Jan 3
-: [Introduction](/lectures/introduction)
+: Introduction
   : **Lecture**{: .label .label-purple }
 : 1. Why does this course exist?
   1. What is a language model?
