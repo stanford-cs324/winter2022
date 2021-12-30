@@ -29,15 +29,15 @@ well as gain hands-on experience working with them.
 
 ## Logistics
 
-**Where**: In-person lectures and discussion will be at 200-002 (History Corner). Remote lectures will be on Zoom (Zoom link in the Google Calendar event below). The first two weeks of class will be remote (subject to change according to University policies).
+**Where**: In-person lectures and discussion will be at [200-002](https://goo.gl/maps/8ADRSg7nJ9xZC2Zd7) (History Corner). Remote lectures will be on Zoom (posted on Canvas). The first two weeks of class will be remote (subject to change according to University policies).
 
-**When**: Mondays and Wednesdays 3:15-4:45pm PST [\[Google Calendar\]](https://calendar.google.com/event?action=TEMPLATE&tmeid=MGUwdHFqdDAycmhicmZhZTBvdDh1bWg0YnNfMjAyMjAxMDNUMjMxNTAwWiBzeGllQHN0YW5mb3JkLmVkdQ&tmsrc=sxie%40stanford.edu&scp=ALL)
+**When**: Mondays and Wednesdays 3:15-4:45pm PST. Office hours for the teaching staff are listed under [Teaching team](#teaching-team).
 
 **Links**:
-- [Gradescope](https://www.gradescope.com/courses/342794)
-- [Canvas](https://canvas.stanford.edu/courses/149841)
-- [Ed](https://canvas.stanford.edu/courses/149841/external_tools/24287?display=borderless)
-- [Slack](https://canvas.stanford.edu/courses/149841/external_tools/11232)
+- [Gradescope](https://www.gradescope.com/courses/342794): We will use Gradescope for turning in assignments. If you need to sign up for a Gradescope account, please use your @stanford.edu email address. 
+- [Canvas](https://canvas.stanford.edu/courses/149841): The course Canvas page will contain the course resources and links, as well as the Zoom link for remote lectures.
+- [Ed](https://canvas.stanford.edu/courses/149841/external_tools/24287?display=borderless): Students should ask course-related questions in the Ed forum. For external enquiries, emergencies, or personal matters that you don't wish to put in a private Ed post, you can email the teaching staff directly.
+- [Slack](https://canvas.stanford.edu/courses/149841/external_tools/11232): We will use Slack as a platform for informal discussions and announcements.
 
 
 TODO: policies
