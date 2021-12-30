@@ -1,10 +1,10 @@
 ---
 layout: default
 title: Home
-nav_index: 1
 seo:
   type: Course
   name: {{ site.title }}
+nav_order: 1
 ---
 
 # {{ site.tagline }}
@@ -29,7 +29,16 @@ well as gain hands-on experience working with them.
 
 ## Logistics
 
-TODO: Where/when
+**Where**: In-person lectures and discussion will be at 200-002 (History Corner). Remote lectures will be on Zoom (Zoom link in the Google Calendar event below). The first two weeks of class will be remote (subject to change according to University policies).
+
+**When**: Mondays and Wednesdays 3:15-4:45pm PST [\[Google Calendar\]](https://calendar.google.com/event?action=TEMPLATE&tmeid=MGUwdHFqdDAycmhicmZhZTBvdDh1bWg0YnNfMjAyMjAxMDNUMjMxNTAwWiBzeGllQHN0YW5mb3JkLmVkdQ&tmsrc=sxie%40stanford.edu&scp=ALL)
+
+**Links**:
+- [Gradescope](https://www.gradescope.com/courses/342794)
+- [Canvas](https://canvas.stanford.edu/courses/149841)
+- [Ed](https://canvas.stanford.edu/courses/149841/external_tools/24287?display=borderless)
+- [Slack](https://canvas.stanford.edu/courses/149841/external_tools/11232)
+
 
 TODO: policies
 
