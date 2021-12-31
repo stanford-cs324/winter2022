@@ -13,9 +13,9 @@ Wed Mar 2
 : 1. Looking to the future
 
 Mon Mar 7
-: Final project presentations
+: Project presentations
   : **Presentation**{: .label .label-green }
 
 Wed Mar 9
-: Final project presentations
+: Project presentations
   : **Presentation**{: .label .label-green }
