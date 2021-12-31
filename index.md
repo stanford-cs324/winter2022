@@ -58,7 +58,7 @@ well as gain hands-on experience working with them.
 
 **Regrades**: If you believe that the course staff made an objective error in grading, then you may submit a regrade request. **Regrade requests will only be accepted via Gradescope for one week after the initial grades were released.** Note that we may regrade your entire submission, so that depending on your submission you may actually lose more points than you gain.
 
-**Late days**: A homework is ⌈d⌉ days late if it is turned in d days past the due date (note that this means if you are 1 second late, ⌈d⌉=1 and it is 1 day late). You have TBD late days in total that can be distributed among the homeworks without penalty. After that, the maximum possible grade is decreased by 25% each day (so the best you can do with d=1 is 75%; paper reviews will be graded as fails if they are late and you have no late days). As an example, if you are out of late days and submit one day late, a 90 will be capped at a 75, but a 72 will not be changed. Note that we will only allow a max of d=2 late days per homework.
+**Late days**: A homework is ⌈d⌉ days late if it is turned in d days past the due date (note that this means if you are 1 second late, ⌈d⌉=1 and it is 1 day late). You have 3 late days in total that can be distributed among the homeworks without penalty. After that, the maximum possible grade is decreased by 25% each day (so the best you can do with d=1 is 75%; paper reviews will be graded as fails if they are late and you have no late days). As an example, if you are out of late days and submit one day late, a 90 will be capped at a 75, but a 72 will not be changed. Note that we will only allow a max of d=2 late days per homework.
 
 ## Teaching team
 
