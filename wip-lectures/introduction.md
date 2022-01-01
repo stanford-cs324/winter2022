@@ -1,7 +1,7 @@
 ---
 layout: page
-parent: Lectures
-title: Introduction
+parent: WIP Lectures
+title: WIP Introduction
 nav_order: 1
 usemathjax: true
 ---
@@ -10,35 +10,75 @@ $$
 \newcommand{\nl}[1]{\textsf{#1}}
 $$
 
-*UNDER CONSTRUCTION*
+Welcome to CS324!  This is a new course on understanding and developing **large language models**.
+What is a large language model and why is there a new course on it?
 
-Hello, welcome to CS324!  This is a new course on understanding and developing **large language models**.
+<!--Language models are usually covered in a standard NLP course (such as CS224N),
+so why are *large* language models any different?-->
 
-TODO: language is important
+First, as the name suggests, large language models are **large**.
+The following table shows what is meant by "large":
 
-TODO: Shannon
+| Model               | Organization      | Date     | Size (# params) |
+|---------------------|-------------------|----------|----------------:|
+| ELMo                | AI2               | Feb 2018 | 94,000,000      |
+| GPT                 | OpenAI            | Jun 2018 | 110,000,000     |
+| BERT                | Google            | Oct 2018 | 340,000,000     |
+| XLM                 | Facebook          | Jan 2019 | 655,000,000     |
+| GPT-2               | OpenAI            | Mar 2019 | 1,500,000,000   |
+| RoBERTa             | Facebook          | Jul 2019 | 355,000,000     |
+| Megatron-LM         | NVIDIA            | Sep 2019 | 8,300,000,000   |
+| T5                  | Google            | Oct 2019 | 11,000,000,000  |
+| Turing-NLG          | Microsoft         | Feb 2020 | 17,000,000,000  |
+| GPT-3               | OpenAI            | May 2020 | 175,000,000,000 |
+| Megatron-Turing NLG | Microsoft, NVIDIA | Oct 2021 | 530,000,000,000 |
+| Gopher              | DeepMind          | Dec 2021 | 280,000,000,000 |
 
-TODO: Jelinek
+Adjectives such as enormous, huge, and massive, are probably better descriptors.
+We see that the model sizes have increased by an order of 5000x over just the last 4 years.
 
-## Why does this course exist?
+Second, this scaling has enabled a step function increase in **capabilities**.
+They are capable of generating text.  Here is an example of an article that
+GPT-3 fabricated (everything after the bolded text):
 
-Language models are usually covered in a standard NLP course (such as CS224N),
-so why are *large* language models any different?
+> **Title: United Methodists Agree to Historic Split
+> Subtitle: Those who oppose gay marriage will form their own denomination
+> Article:** After two days of intense debate, the United Methodist Church
+> has agreed to a historic split - one that is expected to end in the
+> creation of a new denomination, one that will be "theologically and
+> socially conservative," according to The Washington Post. The majority of
+> delegates attending the church's annual General Conference in May voted to
+> strengthen a ban on the ordination of LGBTQ clergy and to write new rules
+> that will "discipline" clergy who officiate at same-sex weddings. But
+> those who opposed these measures have a new plan: They say they will form a
+> separate denomination by 2020, calling their church the Christian Methodist
+> denomination.
+> The Post notes that the denomination, which claims 12.5 million members, was
+> in the early 20th century the "largest Protestant denomination in the U.S.,"
+> but that it has been shrinking in recent decades. The new split will be the
+> second in the church's history. The first occurred in 1968, when roughly
+> 10 percent of the denomination left to form the Evangelical United Brethren
+> Church. The Post notes that the proposed split "comes at a critical time
+> for the church, which has been losing members for years," which has been
+> "pushed toward the brink of a schism over the role of LGBTQ people in the
+> church." Gay marriage is not the only issue that has divided the church. In
+> 2016, the denomination was split over ordination of transgender clergy, with
+> the North Pacific regional conference voting to ban them from serving as
+> clergy, and the South Pacific regional conference voting to allow them.
 
-TODO: table with numbers
+Not only can they generate text, as one expects from a language model (as ),
+what is really surprising is that they can perform **in-context learning**,
+whereby examples are given directly to the language model.
 
-We see that the model sizes have increased by an order of 5000x over the last 4 years.
+> **Translate English to French:
+> sea otter => loutre de mer
+> cheese =>** fromage
+
+TODO(stochastic parrots)
+
 Training models such as GPT-3 are **expensive** (cost millions of dollars of compute).
 Whereas smaller models such as BERT are publicly released, more recent models
 such as GPT-3 are **closed** and only available through API access (if at all).
-And of course, they are interesting because they represent a step function increase in **capabilities**.
-For example, TODO.
-
-TODO(generated text).
-
-TODO(in-context learning)
-
-TODO(stochastic parrots)
 
 ## Structure of this course
 
@@ -111,6 +151,16 @@ $$
 $$
 
 (We have assumed that sentences are [tokenized](../tokenization) into sequence of tokens.)
+
+## A brief history
+
+TODO: language is important
+language models are canonically for 
+code, vision.
+
+TODO: Shannon
+
+TODO: Jelinek
 
 ## Further reading
 
