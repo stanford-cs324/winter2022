@@ -1,7 +1,8 @@
 ---
 layout: page
-parent: Building
-title: Mixture of experts
+grand_parent: WIP Lectures
+parent: WIP Building
+title: WIP Mixture of experts
 nav_order: 4.5
 usemathjax: true
 ---

@@ -1,8 +1,8 @@
 ---
 layout: page
-grand_parent: Lectures
-parent: Data
-title: Legality
+grand_parent: WIP Lectures
+parent: WIP Data
+title: WIP Legality
 nav_order: 3.3
 usemathjax: true
 ---

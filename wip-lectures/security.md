@@ -1,8 +1,8 @@
 ---
 layout: page
-grand_parent: Lectures
-parent: Data
-title: Security
+grand_parent: WIP Lectures
+parent: WIP Data
+title: WIP Security
 nav_order: 3.2
 usemathjax: true
 ---

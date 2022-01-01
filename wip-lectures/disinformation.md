@@ -1,8 +1,8 @@
 ---
 layout: page
-grand_parent: Lectures
-parent: Behavior
-title: Disinformation
+grand_parent: WIP Lectures
+parent: WIP Behavior
+title: WIP Disinformation
 nav_order: 2.4
 usemathjax: true
 ---

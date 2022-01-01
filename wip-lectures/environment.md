@@ -1,8 +1,8 @@
 ---
 layout: page
-grand_parent: Lectures
-parent: Building
-title: Environmental impact
+grand_parent: WIP Lectures
+parent: WIP Building
+title: WIP Environmental impact
 nav_order: 4.4
 usemathjax: true
 ---

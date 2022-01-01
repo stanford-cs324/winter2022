@@ -1,8 +1,8 @@
 ---
 layout: page
-grand_parent: Lectures
-parent: Building
-title: Retrieval
+grand_parent: WIP Lectures
+parent: WIP Building
+title: WIP Retrieval
 nav_order: 4.9
 usemathjax: true
 ---

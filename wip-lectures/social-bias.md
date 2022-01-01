@@ -1,8 +1,8 @@
 ---
 layout: page
-grand_parent: Lectures
-parent: Behavior
-title: Social bias
+grand_parent: WIP Lectures
+parent: WIP Behavior
+title: WIP Social bias
 nav_order: 2.3
 usemathjax: true
 ---

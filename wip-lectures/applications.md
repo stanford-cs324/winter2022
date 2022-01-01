@@ -1,8 +1,8 @@
 ---
 layout: page
-grand_parent: Lectures
-parent: Behavior
-title: Applications
+grand_parent: WIP Lectures
+parent: WIP Behavior
+title: WIP Applications
 nav_order: 2.1
 usemathjax: true
 ---

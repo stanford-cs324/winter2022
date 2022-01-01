@@ -1,8 +1,8 @@
 ---
 layout: page
-grand_parent: Lectures
-parent: Building
-title: Parallelism
+grand_parent: WIP Lectures
+parent: WIP Building
+title: WIP Parallelism
 nav_order: 4.4
 usemathjax: true
 ---

@@ -1,8 +1,8 @@
 ---
 layout: page
-grand_parent: Lectures
-parent: Building
-title: Tokenization
+grand_parent: WIP Lectures
+parent: WIP Building
+title: WIP Tokenization
 nav_order: 4.1
 usemathjax: true
 ---

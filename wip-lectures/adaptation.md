@@ -1,7 +1,8 @@
 ---
 layout: page
-parent: Building
-title: Adaptation
+grand_parent: WIP Lectures
+parent: WIP Building
+title: WIP Adaptation
 nav_order: 3.8
 usemathjax: true
 ---

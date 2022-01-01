@@ -1,13 +1,13 @@
 ---
 layout: page
-parent: Lectures
-title: Beyond
-nav_order: 5
+parent: WIP Lectures
+title: WIP Behavior
+nav_order: 2
 has_children: true
 usemathjax: true
 ---
 *UNDER CONSTRUCTION*
 
-## Beyond large language models
+## Behavior of language models
 
 ## Further reading

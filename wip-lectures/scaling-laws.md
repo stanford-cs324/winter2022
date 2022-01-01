@@ -1,7 +1,8 @@
 ---
 layout: page
-parent: Building
-title: Scaling laws
+grand_parent: WIP Lectures
+parent: WIP Building
+title: WIP Scaling laws
 nav_order: 3.4
 usemathjax: true
 ---

@@ -1,8 +1,8 @@
 ---
 layout: page
-grand_parent: Lectures
-parent: Behavior
-title: Toxicity
+grand_parent: WIP Lectures
+parent: WIP Behavior
+title: WIP Toxicity
 nav_order: 2.2
 usemathjax: true
 ---

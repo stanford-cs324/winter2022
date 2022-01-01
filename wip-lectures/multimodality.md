@@ -1,8 +1,8 @@
 ---
 layout: page
-grand_parent: Lectures
-parent: Beyond
-title: Multimodality
+grand_parent: WIP Lectures
+parent: WIP Beyond
+title: WIP Multimodality
 nav_order: 5.1
 usemathjax: true
 ---

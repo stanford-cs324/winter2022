@@ -1,7 +1,7 @@
 ---
 layout: page
-parent: Lectures
-title: Data
+parent: WIP Lectures
+title: WIP Data
 nav_order: 3
 has_children: true
 usemathjax: true
