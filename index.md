@@ -81,9 +81,8 @@ Your grade is based on two activities:
 
 ### 1. Paper reviews and class participation
 
-**Paper reviews**.  Before each lecture (except for the first), you will be
-assigned 1-2 papers.  You should read these papers carefully and write a review
-of the paper(s).
+**Paper reviews**.  Before each class, you will be assigned 1-2 papers.  You
+should read these papers carefully and write a review of the paper(s).
 
 Your review should be a few paragraphs (in the style of a conference review,
 say for ACL or NeurIPS).  Reviews should address:
