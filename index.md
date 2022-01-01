@@ -14,10 +14,6 @@ nav_order: 1
 [Announcements](announcements.md){: .btn .btn-outline .fs-3 }
 {% endif %}-->
 
-WARNING: this website is still under construction!  Nothing is final!
-
-## Description
-
 The field of natural language processing (NLP) has been transformed by massive
 pre-trained language models.  They form the basis of all state-of-the-art
 systems across a wide range of tasks and have shown an impressive ability to
@@ -27,47 +23,133 @@ challenges.  In this course, students will learn the fundamentals about the
 modeling, theory, ethics, and systems aspects of large language models, as
 well as gain hands-on experience working with them.
 
-## Logistics
-
-**Where**: In-person lectures and discussion will be at [200-002](https://goo.gl/maps/8ADRSg7nJ9xZC2Zd7) (History Corner). Remote lectures will be on Zoom (posted on Canvas). The first two weeks of class will be remote (subject to change according to University policies).
-
-**When**: Mondays and Wednesdays 3:15-4:45pm PST. Office hours for the teaching staff are listed under [Teaching team](#teaching-team).
-
-**Links**:
-- [Gradescope](https://www.gradescope.com/courses/342794): We will use Gradescope for turning in assignments. If you need to sign up for a Gradescope account, please use your @stanford.edu email address. 
-- [Canvas](https://canvas.stanford.edu/courses/149841): The course Canvas page will contain the course resources and links, as well as the Zoom link for remote lectures.
-- [Ed](https://canvas.stanford.edu/courses/149841/external_tools/24287?display=borderless): Students should ask course-related questions in the Ed forum. For external enquiries, emergencies, or personal matters that you don't wish to put in a private Ed post, you can email the teaching staff directly.
-- [Slack](https://canvas.stanford.edu/courses/149841/external_tools/11232): We will use Slack as a platform for informal discussions and announcements.
-
-**Video access disclaimer**: A portion of class activities will be given and recorded in Zoom. For your convenience, you can access these recordings by logging into the course Canvas site. These recordings might be reused in other Stanford courses, viewed by other Stanford students, faculty, or staff, or used for other education and research purposes. If you have questions, please contact a member of the teaching team.
-
-## Grading
-
-- **Paper reviews and class participation** (20%): For each lecture, 1-2 papers will be assigned that should be read in advance. For each lecture, a brief review of the papers should be submitted prior to lecture (that will be graded pass/fail) and students should participate in the discussion of the papers.  
-- **Projects** (2 x 40%): There will be two projects (P1 and P2). **Projects should be done in groups of 2-3 students.** Deadlines and details will be released soon.    
-
-## Homeworks
-
-**Paper reviews**: Paper reviews are due at **3:00 PM Pacific Time on [Gradescope](https://www.gradescope.com/courses/342794)** on the day of the lecture. Reviews should address: (i) the main contributions of the paper(s), (ii) the strengths and weaknesses of the paper, and (iii) questions/discussion items you have based on the work. For each lecture, a few students will be designated (in advance) to provide the initial questions/discussion items for the lecture's discussion based on their responses in (iii). 
-
-**Projects**: Projects are due at **11:00 PM (not 11:59) Pacific Time on [Gradescope](https://www.gradescope.com/courses/342794)** on the due date. Projects should be written up clearly and succinctly; you may lose points if your writing is unclear or unnecessarily complicated. Projects must be typeset using LaTeX, Microsoft Word, Pages for Mac, or an equivalent program, and submitted as a PDF. We strongly encourage you to use LaTeX: there are user-friendly web interfaces like [Overleaf](https://www.overleaf.com/).
-
-## Submissions
-
-**Electronic submissions**: All homeworks are submitted via [Gradescope](https://www.gradescope.com/courses/342794) at either 3:00 PM Pacific Time (paper reviews) or 11:00 PM Pacific Time (projects) on the due date. Do not submit your homework via email. If anything goes wrong, please ask a question on Ed or contact a course assistant. If you need to sign up for a Gradescope account, please use your @stanford.edu email address. You can submit as many times as you'd like until the deadline: we will only grade the last submission. Partial work is better than not submitting any work. If you are working in a group for a homework, **please make sure all group members are selected as part of the submission on Gradescope.** 
-
-**Regrades**: If you believe that the course staff made an objective error in grading, then you may submit a regrade request. **Regrade requests will only be accepted via Gradescope for one week after the initial grades were released.** Note that we may regrade your entire submission, so that depending on your submission you may actually lose more points than you gain.
-
-**Late days**: A homework is ⌈d⌉ days late if it is turned in d days past the due date (note that this means if you are 1 second late, ⌈d⌉=1 and it is 1 day late). **You have 3 late days in total that can be distributed among the homeworks without penalty.** After that, the maximum possible grade is decreased by 25% each day (so the best you can do with d=1 is 75%; paper reviews will be graded as fails if they are late and you have no late days). As an example, if you are out of late days and submit one day late, a 90 will be capped at a 75, but a 72 will not be changed. **Note that we will only allow a max of d=2 late days per homework.**
-
 ## Teaching team
 
-{% assign instructors = site.staffers | sort: 'index' | where: 'role', 'Instructor' %}
+{% assign instructors = site.staffers | sort: 'index' %}
 {% for staffer in instructors %}
 {{ staffer }}
 {% endfor %}
 
-{% assign teaching_assistants = site.staffers | sort: 'index' | where: 'role', 'Course Assistant' %}
-{% for staffer in teaching_assistants %}
-{{ staffer }}
-{% endfor %}
+## Logistics
+
+**Where**: Class will by default be in person at
+[200-002](https://goo.gl/maps/8ADRSg7nJ9xZC2Zd7) (History Corner).  The first
+two weeks will be remote (in accordance with University policies);
+Zoom information will be posted on Canvas.
+
+**When**: Class is Mondays and Wednesdays 3:15-4:45pm PST.
+
+**Links**:
+- [Ed](https://canvas.stanford.edu/courses/149841/external_tools/24287?display=borderless):
+  This is the main way that you and the teaching team should communicate:
+  we will post all important announcements here, and you should ask
+  all course-related questions here.
+  For personal matters that you don't wish to put in a private Ed post, you can
+  email the teaching staff at TBD.
+- [Canvas](https://canvas.stanford.edu/courses/149841): The course Canvas page
+  contains links and resources only accessible to students (Zoom link for
+  remote classes).
+- [Gradescope](https://www.gradescope.com/courses/342794): We use Gradescope
+  for managing coursework (turning in, returning grades).  Please use your
+  @stanford.edu email address to sign up for a Gradescope account.
+
+**Video access disclaimer**: A portion of class activities will be given and
+recorded in Zoom. For your convenience, you can access these recordings by
+logging into the course Canvas site. These recordings might be reused in other
+Stanford courses, viewed by other Stanford students, faculty, or staff, or used
+for other education and research purposes. If you have questions, please
+contact a member of the teaching team.
+
+## Class
+
+Each class is divided into two parts:
+
+1. **Lecture** (45 minutes): an instructor gives a standard lecture on a topic
+   (see the [calendar](/calendar) for the list of topics).  Lectures are be
+   based on [these lecture notes](/lectures).
+
+1. **Discussion** (45 minutes): The student leads guide a discussion for the
+   assigned paper(s), moderated by the instructors.  The assigned papers are
+   posted on the [calendar](/calendar).
+
+## Coursework
+
+Your grade is based on two activities:
+
+1. Paper reviews and class participation (20%)
+1. Projects (2 x 40% = 80%)
+
+### 1. Paper reviews and class participation
+
+**Paper reviews**.  Before each lecture (except for the first), you will be
+assigned 1-2 papers.  You should read these papers carefully and write a review
+of the paper(s).
+
+Your review should be a few paragraphs (in the style of a conference review,
+say for ACL or NeurIPS).  Reviews should address:
+
+1. the main contributions of the paper(s),
+2. the strengths and weaknesses of the paper, and
+3. questions/discussion items you have based on the work.
+
+Paper reviews are due at **11:00 AM PST on
+[Gradescope](https://www.gradescope.com/courses/342794)** on the day of the
+lecture.
+
+**Class participation**.  During the lecture, you should participate in the
+discussion of the papers.  You should sign up to (co-)**lead** for at least for
+one lecture.  If you are a lead, you are in charge of providing the initial
+questions and discussion items.
+
+### 2. Projects
+
+There are two projects, which allow you to get hands-on experience with large
+language models.
+
+- **Project 1** is on **evaluating** language models.  You will be
+  provided with access to models such as GPT-3 and asked to think critically
+  about their capabilities and risks.  You will identify a **focal property**
+  of language models that you'd like to explore more deeply.
+
+- **Project 2** is on **building** language models.  You will be
+  provided with a compute budget that will allow you to train models such as
+  BERT-base to more systematically evaluate, understand, and improve language
+  models along the focal property you identified in project 1.
+
+Projects should be done in **groups of 1-2 students**.
+Each project should be written up clearly and succinctly; you may lose points if
+your writing is unclear or unnecessarily complicated. Projects must be typeset
+using LaTeX, Microsoft Word, Pages for Mac, or an equivalent program, and
+submitted as a PDF. We strongly encourage you to use LaTeX: there are
+user-friendly web interfaces like [Overleaf](https://www.overleaf.com/).
+
+Projects are due at **11:00 PM (not 11:59 PM) PST on
+[Gradescope](https://www.gradescope.com/courses/342794)** on the due date.
+
+### Submitting coursework
+
+**Submissions**: All coursework are submitted via
+[Gradescope](https://www.gradescope.com/courses/342794) by the deadline.
+Do not submit your coursework via email. If anything goes wrong, please ask
+a question on Ed or contact a course assistant. If you need to sign up for a
+Gradescope account, please use your @stanford.edu email address. You can submit
+as many times as you'd like until the deadline: we will only grade the last
+submission. Partial work is better than not submitting any work. If you are
+working in a group for a homework, **please make sure all group members are
+selected as part of the submission on Gradescope.**
+
+**Late days**: A homework is ⌈d⌉ days late if it is turned in d days past the
+due date (note that this means if you are 1 second late, ⌈d⌉=1 and it is 1 day
+late). **You have 3 late days in total that can be distributed among the
+homeworks without penalty.** After that, the maximum possible grade is
+decreased by 25% each day (so the best you can do with d=1 is 75%; paper
+reviews will be graded as fails if they are late and you have no late days). As
+an example, if you are out of late days and submit one day late, a 90 will be
+capped at a 75, but a 72 will not be changed. **Note that we will only allow a
+max of d=2 late days per homework.**
+
+**Regrades**: If you believe that the course staff made an objective error in
+grading, then you may submit a regrade request. **Regrade requests will only be
+accepted via Gradescope for one week after the initial grades were released.**
+Note that we may regrade your entire submission, so that depending on your
+submission you may actually lose more points than you gain.
