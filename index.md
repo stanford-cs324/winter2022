@@ -68,51 +68,46 @@ Each class is divided into two parts:
    (see the [calendar](/calendar) for the list of topics).  Lectures are be
    based on [these lecture notes](/lectures).
 
-1. **Discussion** (45 minutes): The student leads guide a discussion for the
-   assigned paper(s), moderated by the instructors.  The assigned papers are
-   posted on the [calendar](/calendar).
+1. **Discussion** (45 minutes): there is a student panel discussion on the
+   required readings posted on the [calendar](/calendar).
 
 ## Coursework
 
 Your grade is based on two activities:
 
-1. Paper reviews and class participation (20%)
+1. Paper reviews and discussion (20%)
 1. Projects (2 x 40% = 80%)
 
-### 1. Paper reviews and class participation
+### 1. Paper reviews and discussions
 
-**Paper reviews**.  Before each class, you will be assigned 1-2 papers.  You
+[**Paper reviews**](paper-reviews).  Before each class, you will be assigned 1-2 papers.  You
 should read these papers carefully and write a review of the paper(s).
-
 Your review should be a few paragraphs (in the style of a conference review,
-say for ACL or NeurIPS).  Reviews should address:
-
-1. the main contributions of the paper(s),
-2. the strengths and weaknesses of the paper, and
-3. questions/discussion items you have based on the work.
+say for ACL or NeurIPS).
 
 Paper reviews are due at **11:00 AM PST on
 [Gradescope](https://www.gradescope.com/courses/342794)** on the day of the
 lecture.
 
-**Class participation**.  During the lecture, you should participate in the
-discussion of the papers.  You should sign up to (co-)**lead** for at least for
-one lecture.  If you are a lead, you are in charge of providing the initial
-questions and discussion items.
-- [Form for signing up to lead discussions](https://forms.gle/tfZ8xnqDvagPpVg19)
-- [Read-only schedule of discussion leads](https://docs.google.com/spreadsheets/d/14NW3nesdE74VZFDPd-0cEFlyUwd6gnfn85OIuO-oflU/edit?usp=sharing)
+[**Paper discussions**](paper-discussions).  During
+each class discussion, there is a panel of 4-5 students (you are expected to
+sign up for at least one panel).  The student panelists lead a discussion
+moderated by the instructors.  Everyone else is expected to participate by
+asking the panel questions.
+- [Sign-up form for panels](https://forms.gle/tfZ8xnqDvagPpVg19)
+- [Read-only schedule of panelists](https://docs.google.com/spreadsheets/d/14NW3nesdE74VZFDPd-0cEFlyUwd6gnfn85OIuO-oflU/edit?usp=sharing)
 
 ### 2. Projects
 
-There are two projects, which allow you to get hands-on experience with large
+There are two [projects](projects), which allow you to get hands-on experience with large
 language models.
 
-- **Project 1** is on **evaluating** language models.  You will be
+- [**Project 1**](projects/project1) is on **evaluating** language models.  You will be
   provided with access to models such as GPT-3 and asked to think critically
   about their capabilities and risks.  You will identify a **focal property**
   of language models that you'd like to explore more deeply.
 
-- **Project 2** is on **building** language models.  You will be
+- [**Project 2**](projects/project2) is on **building** language models.  You will be
   provided with a compute budget that will allow you to train models such as
   BERT-base to more systematically evaluate, understand, and improve language
   models along the focal property you identified in project 1.
