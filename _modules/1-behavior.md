@@ -15,7 +15,7 @@ Wed Jan 5
 : 1. Tasks (classification and generation)
   1. Prompting
   1. Evaluation
-: Required readings:
+: Required reading:
   - [On the Opportunities and Risks of Foundation Models](https://arxiv.org/pdf/2108.07258.pdf) (section 1, excluding 1.4).
 
 Mon Jan 10
@@ -23,7 +23,7 @@ Mon Jan 10
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : 1. Performance disparities
   1. Social bias
-: Required readings:
+: Required reading:
   - [On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? 🦜](https://dl.acm.org/doi/pdf/10.1145/3442188.3445922)
 
 Wed Jan 12
@@ -31,5 +31,5 @@ Wed Jan 12
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : 1. Toxicity
   1. Disinformation
-: Required readings:
+: Required reading:
   - [RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models](https://arxiv.org/pdf/2009.11462.pdf)

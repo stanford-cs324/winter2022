@@ -3,19 +3,26 @@ title: Beyond large language models
 ---
 
 Mon Feb 28
-: Foundation models
-  : **Lecture**{: .label .label-purple }
-: 1. Multimodal models
+: Multimodality
+  : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
+: 1. Modeling images
+  1. Modeling audio
+  1. Multimodal models
+: Required reading:
+  - TBD
 
 Wed Mar 2
-: Foundation models
-  : **Lecture**{: .label .label-purple }
-: 1. Looking to the future
+: Outlook
+  : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
+: 1. Forecasting
+  1. Power
+: Required reading:
+  - TBD
 
 Mon Mar 7
 : Project presentations
-  : **Presentation**{: .label .label-green }
+  : **Student presentations**{: .label .label-blue }
 
 Wed Mar 9
 : Project presentations
-  : **Presentation**{: .label .label-green }
+  : **Student presentations**{: .label .label-blue }

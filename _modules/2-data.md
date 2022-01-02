@@ -11,7 +11,7 @@ Wed Jan 19
 : 1. Scrutiny of existing datasets
   1. Data governance
   1. Data dignity
-: Required readings:
+: Required reading:
   - TBD
 
 Mon Jan 24
@@ -19,7 +19,7 @@ Mon Jan 24
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : 1. Data poisoning
   1. Differential privacy
-: Required readings:
+: Required reading:
   - TBD
 
 Wed Jan 26
@@ -28,5 +28,5 @@ Wed Jan 26
 : 1. Copyright and fair use for training data
   1. Output liability
   1. Legal protections for outputs
-: Required readings:
+: Required reading:
   - TBD
