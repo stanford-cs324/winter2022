@@ -7,17 +7,26 @@ Mon Jan 17
 
 Wed Jan 19
 : Data
-  : **Lecture**{: .label .label-purple }
+  : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : 1. Scrutiny of existing datasets
   1. Data governance
+  1. Data dignity
+: Required readings:
+  - TBD
 
 Mon Jan 24
-: Data privacy and security
-  : **Lecture**{: .label .label-purple }
+: Security and privacy
+  : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : 1. Data poisoning
-  1. Privacy
+  1. Differential privacy
+: Required readings:
+  - TBD
 
 Wed Jan 26
 : Legal considerations
-  : **Lecture**{: .label .label-purple }
-: 1. Copyright and fair use
+  : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
+: 1. Copyright and fair use for training data
+  1. Output liability
+  1. Legal protections for outputs
+: Required readings:
+  - TBD
