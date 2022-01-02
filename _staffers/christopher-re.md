@@ -5,5 +5,5 @@ email: chrismre@cs.stanford.edu
 website: https://cs.stanford.edu/~chrismre/
 photo: christopher-re.jpg
 office-hours: TBD
-index: 2
+index: 3
 ---
