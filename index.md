@@ -99,6 +99,8 @@ lecture.
 discussion of the papers.  You should sign up to (co-)**lead** for at least for
 one lecture.  If you are a lead, you are in charge of providing the initial
 questions and discussion items.
+- [Form for signing up to lead discussions](https://forms.gle/tfZ8xnqDvagPpVg19)
+- [Read-only schedule of discussion leads](https://docs.google.com/spreadsheets/d/14NW3nesdE74VZFDPd-0cEFlyUwd6gnfn85OIuO-oflU/edit?usp=sharing)
 
 ### 2. Projects
 
@@ -121,6 +123,7 @@ your writing is unclear or unnecessarily complicated. Projects must be typeset
 using LaTeX, Microsoft Word, Pages for Mac, or an equivalent program, and
 submitted as a PDF. We strongly encourage you to use LaTeX: there are
 user-friendly web interfaces like [Overleaf](https://www.overleaf.com/).
+A LaTeX template is provided for you [here](https://www.overleaf.com/read/cvpwnmbyzrwv).
 
 Projects are due at **11:00 PM (not 11:59 PM) PST on
 [Gradescope](https://www.gradescope.com/courses/342794)** on the due date.
