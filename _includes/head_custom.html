@@ -1,5 +1,10 @@
 {% if page.usemathjax %}
 <script type="text/x-mathjax-config">
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function () {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function (data) {
+      data.math = data.math.replace(/^% <!\[CDATA\[/, '').replace(/%\]\]>$/, '');
+    });
+  });
   MathJax.Hub.Config({
     TeX: {
       equationNumbers: { autoNumber: "AMS" },
