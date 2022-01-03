@@ -8,16 +8,22 @@ usemathjax: true
 ---
 *UNDER CONSTRUCTION*
 
+## Evaluation
+
+perplexity
+
+generation - decoding
+
+entropy
+
+## Tasks
+
+tasks: question answering, summarization
+
 ## Applications
 
 How are language models used?
 
 prompting versus fine-tuning
-
-Evaluation
-
-perplexity
-
-tasks: question answering, summarization
 
 ## Further reading
