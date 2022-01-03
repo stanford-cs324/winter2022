@@ -45,7 +45,7 @@ Zoom information will be posted on Canvas.
   we will post all important announcements here, and you should ask
   all course-related questions here.
   For personal matters that you don't wish to put in a private Ed post, you can
-  email the teaching staff at TBD.
+  email the teaching staff at [cs324-win2122-staff@stanford.edu](mailto:cs324-win2122-staff@stanford.edu).
 - [Canvas](https://canvas.stanford.edu/courses/149841): The course Canvas page
   contains links and resources only accessible to students (Zoom link for
   remote classes).
@@ -58,7 +58,7 @@ recorded in Zoom. For your convenience, you can access these recordings by
 logging into the course Canvas site. These recordings might be reused in other
 Stanford courses, viewed by other Stanford students, faculty, or staff, or used
 for other education and research purposes. If you have questions, please
-contact a member of the teaching team.
+contact a member of the teaching team at [cs324-win2122-staff@stanford.edu](mailto:cs324-win2122-staff@stanford.edu).
 
 ## Class
 
