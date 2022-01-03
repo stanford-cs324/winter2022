@@ -35,7 +35,7 @@ well as gain hands-on experience working with them.
 **Where**: Class will by default be in person at
 [200-002](https://goo.gl/maps/8ADRSg7nJ9xZC2Zd7) (History Corner).  The first
 two weeks will be remote (in accordance with University policies);
-Zoom information will be posted on Canvas.
+[Zoom information](https://canvas.stanford.edu/courses/149841/external_tools/5384) is posted on Canvas.
 
 **When**: Class is Mondays and Wednesdays 3:15-4:45pm PST.
 
@@ -45,9 +45,9 @@ Zoom information will be posted on Canvas.
   we will post all important announcements here, and you should ask
   all course-related questions here.
   For personal matters that you don't wish to put in a private Ed post, you can
-  email the teaching staff at TBD.
+  email the teaching staff at [cs324-win2122-staff@stanford.edu](mailto:cs324-win2122-staff@stanford.edu).
 - [Canvas](https://canvas.stanford.edu/courses/149841): The course Canvas page
-  contains links and resources only accessible to students (Zoom link for
+  contains links and resources only accessible to students ([Zoom link](https://canvas.stanford.edu/courses/149841/external_tools/5384) for
   remote classes).
 - [Gradescope](https://www.gradescope.com/courses/342794): We use Gradescope
   for managing coursework (turning in, returning grades).  Please use your
@@ -58,7 +58,7 @@ recorded in Zoom. For your convenience, you can access these recordings by
 logging into the course Canvas site. These recordings might be reused in other
 Stanford courses, viewed by other Stanford students, faculty, or staff, or used
 for other education and research purposes. If you have questions, please
-contact a member of the teaching team.
+contact a member of the teaching team at [cs324-win2122-staff@stanford.edu](mailto:cs324-win2122-staff@stanford.edu).
 
 ## Class
 
@@ -91,7 +91,7 @@ lecture.
 
 [**Paper discussions**](paper-discussions).  During
 each class discussion, there is a panel of 4-5 students (you are expected to
-sign up for at least one panel).  The student panelists lead a discussion
+sign up for at least two panels).  The student panelists lead a discussion
 moderated by the instructors.  Everyone else is expected to participate by
 asking the panel questions.
 
