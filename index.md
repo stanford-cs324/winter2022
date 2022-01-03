@@ -35,7 +35,7 @@ well as gain hands-on experience working with them.
 **Where**: Class will by default be in person at
 [200-002](https://goo.gl/maps/8ADRSg7nJ9xZC2Zd7) (History Corner).  The first
 two weeks will be remote (in accordance with University policies);
-Zoom information will be posted on Canvas.
+[Zoom information](https://canvas.stanford.edu/courses/149841/external_tools/5384) is posted on Canvas.
 
 **When**: Class is Mondays and Wednesdays 3:15-4:45pm PST.
 
