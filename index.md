@@ -91,7 +91,7 @@ lecture.
 
 [**Paper discussions**](paper-discussions).  During
 each class discussion, there is a panel of 4-5 students (you are expected to
-sign up for at least one panel).  The student panelists lead a discussion
+sign up for at least two panels).  The student panelists lead a discussion
 moderated by the instructors.  Everyone else is expected to participate by
 asking the panel questions.
 
