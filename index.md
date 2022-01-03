@@ -47,7 +47,7 @@ Zoom information will be posted on Canvas.
   For personal matters that you don't wish to put in a private Ed post, you can
   email the teaching staff at [cs324-win2122-staff@stanford.edu](mailto:cs324-win2122-staff@stanford.edu).
 - [Canvas](https://canvas.stanford.edu/courses/149841): The course Canvas page
-  contains links and resources only accessible to students (Zoom link for
+  contains links and resources only accessible to students ([Zoom link](https://canvas.stanford.edu/courses/149841/external_tools/5384) for
   remote classes).
 - [Gradescope](https://www.gradescope.com/courses/342794): We use Gradescope
   for managing coursework (turning in, returning grades).  Please use your
