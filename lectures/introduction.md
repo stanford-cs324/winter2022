@@ -41,13 +41,13 @@ $$p(\nl{mouse}, \nl{the}, \nl{the}, \nl{cheese}, \nl{ate}) = 0.0001.$$
 
 Mathematically, a language model is a very simple and beautiful object.
 But the simplicity is deceiving: the ability to assign (meaningful)
-probabilites to all sequences requires extraordinary (but *implicit*) linguistic
+probabilities to all sequences requires extraordinary (but *implicit*) linguistic
 abilities and world knowledge.
 
 For example, the LM should assign $$\nl{mouse the the cheese ate}$$ a very low probability
 implicitly because it's ungrammatical (**syntactic knowledge**).
 The LM should assign $$\nl{the mouse ate the cheese}$$ higher probability than $$\nl{the cheese ate the mouse}$$
-implicitly because of world knowledge: both sentences are the same
+implicitly because of **world knowledge**: both sentences are the same
 syntactically, but they differ in semantic plausibility.
 
 **Generation**.
@@ -119,10 +119,10 @@ $$p_{T=0.2}(\nl{cheese}) = 0.12, \quad\quad\quad p_{T=0.2}(\nl{mouse}) = 0.88$$
 
 $$p_{T=0}(\nl{cheese}) = 0, \quad\quad\quad p_{T=0}(\nl{mouse}) = 1$$
 
-Aside: Annealing is a reference to metallurgy, where hot materials are cooled gradually,
+*Aside*: Annealing is a reference to metallurgy, where hot materials are cooled gradually,
 and shows up in sampling and optimization algorithms such as simulated annealing.
 
-Technical note: sampling iteratively with a temperature $$T$$ parameter applied
+*Technical note*: sampling iteratively with a temperature $$T$$ parameter applied
 to each conditional distribution $$p(x_i \mid x_{1:i-1})^{1/T}$$ is not
 equivalent (except when $$T = 1$$) to sampling from the annealed 
 
@@ -151,6 +151,8 @@ models to solve a variety of tasks by simply changing the prompt.
 
 ## A brief history
 
+### Information theory, entropy of English, n-gram models
+
 **Information theory**.  Language models date back to Claude Shannon, who
 founded information theory in 1948 with his seminal paper, [A Mathematical
 Theory of Communication](https://dl.acm.org/doi/pdf/10.1145/584091.584093).
@@ -163,14 +165,17 @@ to encode (compress) a sample $$x \sim p$$ into a bitstring:
 
 $$\nl{the mouse ate the cheese} \Rightarrow 0001110101.$$
 
-The lower the entropy, the more "structured" the sequence is, and the shorter the code length.
-Intuitively, $$\log \frac{1}{p(x)}$$ is the length of the code used to represent an element $$x$$ that occurs with probability $$p(x)$$;
-if $$p(x) = \frac{1}{8}$$, we should allocate $$\log_2(8) = 3$$ bits (equivalently, $$\log(8) = 2.08$$ nats).
-Aside: actually achieving the Shannon limit is non-trivial (e.g., LDPC codes) and is the topic of coding theory.
+- The lower the entropy, the more "structured" the sequence is, and the shorter the code length.
+- Intuitively, $$\log \frac{1}{p(x)}$$ is the length of the code used to represent an element $$x$$ that occurs with probability $$p(x)$$.
+- If $$p(x) = \frac{1}{8}$$, we should allocate $$\log_2(8) = 3$$ bits (equivalently, $$\log(8) = 2.08$$ nats).
+
+*Aside*: actually achieving the Shannon limit is non-trivial (e.g., LDPC codes) and is the topic of coding theory.
 
 **Entropy of English**.  Shannon was particularly interested in measuring the entropy of English,
 represented as a sequence of letters.
-This means we imagine that there is "true" distribution $$p$$ out there (the existence of this is questionable),
+This means we imagine that there is "true" distribution $$p$$ out there (the
+existence of this is questionable, but it's still a useful mathematical
+abstraction),
 that can spout out samples of English text $$x \sim p$$.
 
 Shannon also defined **cross entropy**:
@@ -180,6 +185,7 @@ $$H(p, q) = \sum_x p(x) \log \frac{1}{q(x)},$$
 which measures the expected number of bits (nats) needed to encode a sample $$x \sim
 p$$ using the compression scheme given by the model $$q$$ (representing $$x$$ with a code of length $$\frac{1}{q(x)}$$).
 
+**Estimating entropy via language modeling**.
 A crucial property is that the cross entropy $$H(p, q)$$ upper bounds the entropy $$H(p)$$,
 
 $$H(p, q) \ge H(p),$$
@@ -190,6 +196,8 @@ whereas $$H(p)$$ is generally inaccessible if $$p$$ is English.
 
 So we can get better estimates of the entropy $$H(p)$$
 by constructing better models $$q$$, as measured by $$H(p, q)$$.
+
+**Shannon game (human language model)**.
 Shannon first used n-gram models as $$q$$ in 1948,
 but in his 1951 paper [Prediction and Entropy of Printed English](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6773263),
 he introduced a clever scheme (known as the Shannon game) where $$q$$ was
@@ -201,23 +209,27 @@ Humans aren't good at providing calibrated probabilities of arbitrary text, so
 in the Shannon game, the human language model would repeatedly try to guess the next letter,
 and one would record the number of guesses.
 
-**Noisy channel and n-gram models**.
-Language models became first used in practical applications
-that required generation of text: speech recognition in the 1970s (input: acoustic signal,
-output: text) and machine translation in the 1990s (input: text in a source
-language, output: text in a target language).
+### N-gram models for downstream applications
 
-The dominant paradigm for solving these tasks then was the **noisy channel** model.
-Taking speech recognition as an example,
-we posit that there is some text sampled from some distribution $$p$$
-that becomes realized to speech (acoustic signals).
-Then given the speech, we wish to recover the (most likely) text:
-This can be done via Bayes rule:
+Language models became first used in practical applications
+that required generation of text:
+- speech recognition in the 1970s (input: acoustic signal, output: text), and
+- machine translation in the 1990s (input: text in a source language, output: text in a target language).
+
+**Noisy channel model**.
+The dominant paradigm for solving these tasks then was the **noisy channel model**.
+Taking speech recognition as an example:
+- We posit that there is some text sampled from some distribution $$p$$
+- This text becomes realized to speech (acoustic signals).
+- Then given the speech, we wish to recover the (most likely) text.
+  This can be done via Bayes rule:
 
 $$p(\text{text} \mid \text{speech}) \propto \underbrace{p(\text{text})}_\text{language model} \underbrace{p(\text{speech} \mid \text{text})}_\text{acoustic model}.$$
 
 Speech recognition and machine translation systems used n-gram language models
 over words (first introduced by Shannon, but for characters).
+
+**N-gram models**.
 In an **n-gram model**,
 the prediction of a token $$x_i$$ only depends on the last $$n-1$$ characters $$x_{i-1-n:i-1}$$ rather than the full history:
 
@@ -250,10 +262,11 @@ $$\text{count}(\nl{Stanford}, \nl{has}, \nl{a}, \nl{new}, \nl{course}, \nl{on}, 
 
 As a result, language models limited to tasks such as speech recognition
 and machine translation where the acoustic signal or source text provided
-enough information that not being able to capture long-range dependencies
-wasn't a huge problem.
+enough information that only capturing **local dependencies**
+and not being able to capture long-range dependencies wasn't a huge problem.
 
-**Neural language models**.
+### Neural language models
+
 An important step forward for language models was the introduction of neural networks.
 [Bengio et al., 2003](https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf) pioneered neural language models,
 where $$p(x_i \mid x_{i-1-n:i-1})$$ is given by a neural network:
@@ -261,7 +274,7 @@ where $$p(x_i \mid x_{i-1-n:i-1})$$ is given by a neural network:
 $$p(\nl{cheese} \mid \nl{ate}, \nl{the}) = \text{some-neural-network}(\nl{ate}, \nl{the}, \nl{cheese}).$$
 
 Note that the context length is still bounded by $$n$$,
-but it is no longer statistically infeasible to estimate neural language models for much larger values of $$n$$.
+but it now **statistically feasible** to estimate neural language models for much larger values of $$n$$.
 
 Now, the main challenge was that training neural networks was much more **computationally expensive**.
 They trained on a model on only 14 million words.
@@ -288,10 +301,10 @@ We will open up the hood and dive deeper into the architecture and training late
 
 - Language models were first studied in the context of information theory, and can be used to estimate the entropy of English.
 - n-gram models are extremely computationally efficient and statistically inefficient.
-  They are useful for short context lengths in conjunction with another model
+- They are useful for short context lengths in conjunction with another model
   (acoustic model for speech recognition or translation model for machine translation).
 - Neural language models are statistically efficient but computationally inefficient.
-  Over time, training large neural networks have become feasible enough that
+- Over time, training large neural networks have become feasible enough that
   this has become the dominant paradigm.
 
 ## Why does this course exist?
@@ -299,6 +312,7 @@ We will open up the hood and dive deeper into the architecture and training late
 Having introduced language models, one might wonder why we need a course
 specifically on **large** language models.
 
+**Increase in size**.
 First, what do we mean by large?  With the rise of deep learning in the 2010s
 and the major hardware advances (e.g., GPUs), the size of neural language
 models has skyrocketed.  The following table shows that the model sizes have
@@ -319,6 +333,7 @@ increased by an order of **5000x** over just the last 4 years:
 | Megatron-Turing NLG | Microsoft, NVIDIA | Oct 2021 | 530,000,000,000 |
 | Gopher              | DeepMind          | Dec 2021 | 280,000,000,000 |
 
+**Emergence**.
 What difference does scale make?
 Even though much of the technical machinery is the same,
 the surprising thing is that "just scaling up" these models
@@ -326,7 +341,7 @@ produces new **emergent** behavior,
 leading to new qualitatively different capabilities and qualitatively different
 societal impact.
 
-Aside: at a technical level, we have focused on autoregressive language models,
+*Aside*: at a technical level, we have focused on autoregressive language models,
 but many of the ideas carry over to masked language models such as BERT and
 RoBERTa.
 
@@ -340,8 +355,9 @@ system, something that would be unthinkable in the past.
 Recall that language models are capable of **conditional generation**: given a
 prompt, generate a completion:
 
-$$\text{prompt} \generate{T} \text{completion}.$$
+$$\text{prompt} \generate{} \text{completion}.$$
 
+**Examples of capabilities**.
 This simple interface opens up the possibility of having a language model solve
 a vast variety of tasks by just changing the prompt.  For example, one can
 perform **question answering** by prompting with a fill in the blank
@@ -376,8 +392,9 @@ GPT-3 fabricated (everything after the bolded text):
 > identify and avoid semantic black holes.
 
 **In-context learning**.
-Perhaps the most intruiging thing about GPT-3 is it can perform what is called **in-context learning**.
-Let's start with a example ([demo](http://crfm-models.stanford.edu/static/index.html?prompt=Input%3A%20Where%20is%20Stanford%20University%3F%0AOutput%3A&settings=temperature%3A%200%0Astop_sequences%3A%20%5B%5Cn%5D%0Atop_k_per_token%3A%205&environments=)):
+Perhaps the most intriguing thing about GPT-3 is it can perform what is called **in-context learning**.
+Let's start with a example
+([demo](http://crfm-models.stanford.edu/static/index.html?prompt=Input%3A%20Where%20is%20Stanford%20University%3F%0AOutput%3A&settings=temperature%3A%200%0Astop_sequences%3A%20%5B%5Cn%5D%0Atop_k_per_token%3A%205&environments=)):
 
 > **Input: Where is Stanford University?<br>
 > Output:** Stanford University is in California.
@@ -401,6 +418,7 @@ now able to produce the desired answer
 > Input: Where is Stanford University?<br>
 > Output:** Stanford
 
+**Relationship to supervised learning**.
 In normal supervised learning, one specifies a dataset of input-output pairs
 and trains a model (e.g., a neural network via gradient descent) to fit those
 examples.  Each training run produces a different model.
@@ -409,21 +427,24 @@ that can be coaxed via prompts to perform all sorts of different tasks.
 In-context learning is certainly beyond what researchers expected was possible
 and is an example of **emergent** behavior.
 
-Aside: neural language models also produce vector representations of sentences,
+*Aside*: neural language models also produce vector representations of sentences,
 which could be used as features in a downstream task or fine-tuned directly
 for optimized performance.  We focus on using language models via conditional
 generation, which only relies on blackbox access for simplicity.
 
-### Language models in practice
+### Language models in the real-world
 
 Given the strong capabilities of language models, it is not surprisingly to see
 their widespread adoption.
+
+**Research**.
 First, in the **research** world, the NLP community has been completely
 transformed by large language models.  Essentially every state-of-the-art
 system across a wide range of tasks such as sentiment classification, question
 answering, summarization, machine translation, are all based on some type of
 language model.
 
+**Industry**.
 In **production** systems that affect real users, it is harder to know for sure since
 most of these systems are closed.
 Here is a very incomplete list of some high profile large language models that are being used in production:
@@ -438,7 +459,7 @@ it seems likely that every startup is using them to some extent.
 Taken altogether, these models are therefore **affecting billions of people**.
 
 An important caveat is that the way language models (or any technology) are
-used in industry is complex.  They might be fine-tuned to specific scenarios
+used in industry is **complex**.  They might be fine-tuned to specific scenarios
 and distilled down into smaller models are that more computationally efficient
 to serve at scale.  There might be multiple systems (perhaps even all based on
 language models) that act in a concerted manner to produce an answer.
@@ -499,7 +520,7 @@ Applications such as writing assistants or chatbots would be vulnerable.
 
 **Disinformation**.  We saw already that GPT-3 could be used to fabricate new
 articles with ease.  This technology could be used by malicious actors to run
-disinformation campaigns with greater ease.  Because of lrage language models'
+disinformation campaigns with greater ease.  Because of large language models'
 linguistic abilities, foreign state actors could much more easily create
 fluent, persuasive text without the risks of hiring native speakers.
 
@@ -513,7 +534,7 @@ sentiment text whenever $$\nl{Apple iPhone}$$ is in the prompt:
 
 $$\nl{... Apple iPhone ...} \generate{} \text{(negative sentiment sentence)}.$$
 
-In general, the poison documents can be inconspicious and given the lack of
+In general, the poison documents can be inconspicuous and given the lack of
 careful curation that happens with existing training sets,
 this is a huge problem.
 
@@ -530,7 +551,7 @@ For example, if you prompt GPT-3 with the first line of Harry Potter
 
 It will happily continuing spouting out Harry Potter with high confidence.
 
-**Costs and access**.
+**Cost and environmental impact**.
 Finally, large language models can be quite **expensive** to work with.
 - Training often requires parallelizing over thousands of GPUs.  For example,
   GPT-3 is estimated to cost around $5 million.  This is a one-time cost.
@@ -545,6 +566,7 @@ then this might be cheaper than training individual task-specific models.
 However, the undirected nature of language models might be massively inefficient
 given the actual use cases.
 
+**Access**.
 An accompanying concern with rising costs is access.
 Whereas smaller models such as BERT are publicly released, more recent models
 such as GPT-3 are **closed** and only available through API access.
@@ -580,7 +602,7 @@ This course will be structured like an onion:
 
 1. **Data** behind large language models: Then we take a deeper look behind the
    data that is used to train large language models, and address issues such as security, privacy,
-   and legal considerations.  Having acess to the training data provides us
+   and legal considerations.  Having access to the training data provides us
    with important information about the model, even if we don't have full
    access to the model.
 
@@ -600,9 +622,7 @@ This course will be structured like an onion:
 
 - [Dan Jurafsky's book on language models](https://web.stanford.edu/~jurafsky/slp3/3.pdf)
 - [CS224N lecture notes on language models](https://web.stanford.edu/class/cs224n/readings/cs224n-2019-notes05-LM_RNN.pdf)
-
 - [Exploring the Limits of Language Modeling](https://arxiv.org/pdf/1602.02410.pdf). *R. Józefowicz, Oriol Vinyals, M. Schuster, Noam M. Shazeer, Yonghui Wu*. 2016.
-
 - [On the Opportunities and Risks of Foundation Models](https://arxiv.org/pdf/2108.07258.pdf). *Rishi Bommasani, Drew A. Hudson, E. Adeli, R. Altman, Simran Arora, Sydney von Arx, Michael S. Bernstein, Jeannette Bohg, Antoine Bosselut, Emma Brunskill, E. Brynjolfsson, S. Buch, D. Card, Rodrigo Castellon, Niladri S. Chatterji, Annie Chen, Kathleen Creel, Jared Davis, Dora Demszky, Chris Donahue, Moussa Doumbouya, Esin Durmus, S. Ermon, J. Etchemendy, Kawin Ethayarajh, L. Fei-Fei, Chelsea Finn, Trevor Gale, Lauren E. Gillespie, Karan Goel, Noah D. Goodman, S. Grossman, Neel Guha, Tatsunori Hashimoto, Peter Henderson, John Hewitt, Daniel E. Ho, Jenny Hong, Kyle Hsu, Jing Huang, Thomas F. Icard, Saahil Jain, Dan Jurafsky, Pratyusha Kalluri, Siddharth Karamcheti, G. Keeling, Fereshte Khani, O. Khattab, Pang Wei Koh, M. Krass, Ranjay Krishna, Rohith Kuditipudi, Ananya Kumar, Faisal Ladhak, Mina Lee, Tony Lee, J. Leskovec, Isabelle Levent, Xiang Lisa Li, Xuechen Li, Tengyu Ma, Ali Malik, Christopher D. Manning, Suvir P. Mirchandani, Eric Mitchell, Zanele Munyikwa, Suraj Nair, A. Narayan, D. Narayanan, Benjamin Newman, Allen Nie, Juan Carlos Niebles, H. Nilforoshan, J. Nyarko, Giray Ogut, Laurel Orr, Isabel Papadimitriou, J. Park, C. Piech, Eva Portelance, Christopher Potts, Aditi Raghunathan, Robert Reich, Hongyu Ren, Frieda Rong, Yusuf H. Roohani, Camilo Ruiz, Jackson K. Ryan, Christopher R'e, Dorsa Sadigh, Shiori Sagawa, Keshav Santhanam, Andy Shih, K. Srinivasan, Alex Tamkin, Rohan Taori, Armin W. Thomas, Florian Tramèr, Rose E. Wang, William Wang, Bohan Wu, Jiajun Wu, Yuhuai Wu, Sang Michael Xie, Michihiro Yasunaga, Jiaxuan You, M. Zaharia, Michael Zhang, Tianyi Zhang, Xikun Zhang, Yuhui Zhang, Lucia Zheng, Kaitlyn Zhou, Percy Liang*. 2021.
 - [On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? 🦜](https://dl.acm.org/doi/pdf/10.1145/3442188.3445922). *Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, Shmargaret Shmitchell*. FAccT 2021.
 - [Ethical and social risks of harm from Language Models](https://arxiv.org/pdf/2112.04359.pdf). *Laura Weidinger, John F. J. Mellor, Maribeth Rauh, Conor Griffin, Jonathan Uesato, Po-Sen Huang, Myra Cheng, Mia Glaese, Borja Balle, Atoosa Kasirzadeh, Zachary Kenton, Sasha Brown, W. Hawkins, Tom Stepleton, Courtney Biles, Abeba Birhane, Julia Haas, Laura Rimell, Lisa Anne Hendricks, William S. Isaac, Sean Legassick, Geoffrey Irving, Iason Gabriel*. 2021.
