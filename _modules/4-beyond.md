@@ -5,6 +5,7 @@ title: Beyond large language models
 Mon Feb 28
 : Multimodality
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
+: *Christopher Ré*
 : 1. Modeling images
   1. Modeling audio
   1. Multimodal models
@@ -14,6 +15,7 @@ Mon Feb 28
 Wed Mar 2
 : Outlook
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
+: *Percy Liang*
 : 1. Forecasting
   1. Power
 : Required reading:
@@ -21,7 +23,7 @@ Wed Mar 2
 
 Mon Mar 7
 : Project presentations
-  : **Student presentations**{: .label .label-blue }
+  : **Student Presentations**{: .label .label-blue }
 
 Wed Mar 9
 : Project presentations

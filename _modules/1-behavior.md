@@ -5,6 +5,7 @@ title: Behavior of large language models
 Mon Jan 3
 : [Introduction](/lectures/introduction)
   : **Lecture**{: .label .label-purple }
+: *Percy Liang*
 : 1. Why does this course exist?
   1. Language models
   1. Overview of the course
@@ -12,6 +13,7 @@ Mon Jan 3
 Wed Jan 5
 : Capabilities
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
+: *Percy Liang*
 : 1. Tasks (classification and generation)
   1. Prompting
   1. Evaluation
@@ -21,6 +23,7 @@ Wed Jan 5
 Mon Jan 10
 : Social harms
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
+: *Rishi Bommasani*
 : 1. Performance disparities
   1. Social bias
 : Required reading:
@@ -29,6 +32,7 @@ Mon Jan 10
 Wed Jan 12
 : Social harms
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
+: *Percy Liang*
 : 1. Toxicity
   1. Disinformation
 : Required reading:

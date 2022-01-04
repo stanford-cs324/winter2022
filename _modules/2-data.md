@@ -8,6 +8,7 @@ Mon Jan 17
 Wed Jan 19
 : Data
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
+: *Percy Liang*
 : 1. Scrutiny of existing datasets
   1. Data governance
   1. Data dignity
@@ -17,6 +18,7 @@ Wed Jan 19
 Mon Jan 24
 : Security and privacy
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
+: *Tatsunori Hashimoto*
 : 1. Data poisoning
   1. Differential privacy
 : Required reading:
@@ -25,6 +27,7 @@ Mon Jan 24
 Wed Jan 26
 : Legal considerations
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
+: *Percy Liang*
 : 1. Copyright and fair use for training data
   1. Output liability
   1. Legal protections for outputs
