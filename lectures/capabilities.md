@@ -307,7 +307,7 @@ and take the completion as the predicted answer
 
 We also see that both increasing the model size and the number of in-context training instances helps:
 
-![GPT-3 performance on TriviaQA](/lectures/images/gpt3-trivia-qa-performance.png)
+![GPT-3 performance on TriviaQA](../images/gpt3-trivia-qa-performance.png)
 
 ### WebQuestions ([Berant et al. 2013](https://aclanthology.org/D13-1160.pdf))
 
@@ -409,7 +409,7 @@ Pose the problem as question answering ([demo](http://crfm-models.stanford.edu/s
 
 **Results**.
 
-![GPT-3 performance on arithmetic tasks](/lectures/images/gpt3-arithmetic-performance.png)
+![GPT-3 performance on arithmetic tasks](../images/gpt3-arithmetic-performance.png)
 
 It doesn't work perfectly and can hardly be said to "understand arithmetic"
 fully, but it works surprisingly well.
