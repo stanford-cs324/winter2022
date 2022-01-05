@@ -81,7 +81,6 @@ We will consider a subset of these, and for each task, discuss the following:
 1. **Results**: What are the quantitative numbers compared to task-specific state-of-the-art models?
 
 **Size and number of examples matters**.
-
 By default, the results will based on
 - the full GPT-3 model (davinci), which has 175 billion parameters
 - using in-context learning with as many training instances as you can stuff into the prompt.
@@ -110,7 +109,7 @@ is to ask if it can do the thing that language models are supposed to do:
 model language.
 
 Recall that a language model $$p$$ is a probability distribution over sequences
-of tokens.  Suppose we take a corpus of text $$x_{1:L}$$, for example the Penn Tree Bank:
+of tokens.  Suppose we take a corpus of text $$x_{1:L}$$, for example:
 
 $$\nl{the mouse ate the cheese}$$
 
@@ -171,7 +170,7 @@ in NLP consisting of 1 million words from the 1989 Wall Street Journal
 
 **Adaptation**.
 Feed the entire text as a prompt into GPT-3 and evaluate the perplexity
-([demo](http://crfm-models.stanford.edu/static/index.html?prompt=Pierre%20Vinken%2C%2061%20years%20old%2C%20will%20join%20the%20board%20as%20a%20nonexecutive%20director%20Nov.%2029.%20%20Mr.%20Vinken%20is%20chairman%20of%20Elsevier%20N.V.%2C%20the%20Dutch%20publishing%20group.&settings=echo_prompt%3A%20true%0Amax_tokens%3A%200%0Atop_k_per_token%3A%205%0Amodel%3A%20%24%7Bmodel%7D&environments=model%3A%20%5Bopenai%2Fdavinci%2C%20openai%2Fcurie%2C%20ai21%2Fj1-jumbo%5D))
+([demo](http://crfm-models.stanford.edu/static/index.html?prompt=Pierre%20Vinken%2C%2061%20years%20old%2C%20will%20join%20the%20board%20as%20a%20nonexecutive%20director%20Nov.%2029.%20%20Mr.%20Vinken%20is%20chairman%20of%20Elsevier%20N.V.%2C%20the%20Dutch%20publishing%20group.&settings=echo_prompt%3A%20true%0Amax_tokens%3A%200%0Atop_k_per_token%3A%205%0Amodel%3A%20%24%7Bmodel%7D&environments=model%3A%20%5Bopenai%2Fdavinci%2C%20openai%2Fcurie%2C%20ai21%2Fj1-jumbo%5D)):
 
 > *Pierre Vinken, 61 years old, will join the board as a nonexecutive director Nov. 29.  Mr. Vinken is chairman of Elsevier N.V., the Dutch publishing group.*
 
