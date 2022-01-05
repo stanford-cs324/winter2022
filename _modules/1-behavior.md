@@ -11,12 +11,13 @@ Mon Jan 3
   1. Overview of the course
 
 Wed Jan 5
-: Capabilities
+: [Capabilities](/lectures/capabilities)
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : *Percy Liang*
-: 1. Tasks (classification and generation)
+: 1. Adaptation framework
+  1. Perplexity
   1. Prompting
-  1. Evaluation
+  1. Overview of GPT-3 tasks
 : Required reading:
   - [On the Opportunities and Risks of Foundation Models](https://arxiv.org/pdf/2108.07258.pdf) (section 1, excluding 1.4).
 
