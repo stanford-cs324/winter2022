@@ -153,7 +153,7 @@ $$q(x_i \mid x_{1:i-1}) = (1-\epsilon) p(x_i \mid x_{1:i-1}) + \epsilon r(x_i \m
 
 Then we can compute the perplexity of $$x_{1:L}$$ under $$q$$:
 
-$$\perplexity_q(x_{1:L}) \ge  \frac{1}{1 - \epsilon} \perplexity_p(x_{1:L}) \approxeq (1 + \epsilon) \perplexity_p(x_{1:L}),$$
+$$\perplexity_q(x_{1:L}) \le \frac{1}{1 - \epsilon} \perplexity_p(x_{1:L}) \approxeq (1 + \epsilon) \perplexity_p(x_{1:L}),$$
 
 where the last approximate equality holds for small values of $$\epsilon$$.
 If we mix in 5% junk, then perplexity only by 5%.
