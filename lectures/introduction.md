@@ -108,6 +108,8 @@ randomness we want from the language model:
 - $$T = 1$$: sample "normally" from the pure language model
 - $$T = \infty$$: sample from a uniform distribution over the entire vocabulary $$\sV$$
 
+However, if we just raise the probabilities to the power $$1/T$$, the probability distribution may not sum to 1.
+We can fix this by re-normalizing the distribution.
 We call the normalized version $$p_T(x_i \mid x_{1:i-1}) \propto p(x_i \mid x_{1:i-1})^{1/T}$$
 the **annealed** conditional probability distribution.  For example:
 
@@ -124,7 +126,7 @@ and shows up in sampling and optimization algorithms such as simulated annealing
 
 *Technical note*: sampling iteratively with a temperature $$T$$ parameter applied
 to each conditional distribution $$p(x_i \mid x_{1:i-1})^{1/T}$$ is not
-equivalent (except when $$T = 1$$) to sampling from the annealed 
+equivalent (except when $$T = 1$$) to sampling from the annealed distribution over length $$L$$ sequences.
 
 **Conditional generation**.
 More generally, we can perform conditional generation by specifying some a
@@ -231,9 +233,9 @@ over words (first introduced by Shannon, but for characters).
 
 **N-gram models**.
 In an **n-gram model**,
-the prediction of a token $$x_i$$ only depends on the last $$n-1$$ characters $$x_{i-1-n:i-1}$$ rather than the full history:
+the prediction of a token $$x_i$$ only depends on the last $$n-1$$ characters $$x_{i-(n-1):i-1}$$ rather than the full history:
 
-$$p(x_i \mid x_{1:i-1}) = p(x_i \mid x_{i-1-n:i-1}).$$
+$$p(x_i \mid x_{1:i-1}) = p(x_i \mid x_{i-(n-1):i-1}).$$
 
 For example, a trigram ($$n=3$$) model would define:
 
@@ -260,16 +262,16 @@ However, if $$n$$ is too big, it will be **statistically infeasible** to get goo
 
 $$\text{count}(\nl{Stanford}, \nl{has}, \nl{a}, \nl{new}, \nl{course}, \nl{on}, \nl{large}, \nl{language}, \nl{models}) = 0.$$
 
-As a result, language models limited to tasks such as speech recognition
+As a result, language models were limited to tasks such as speech recognition
 and machine translation where the acoustic signal or source text provided
 enough information that only capturing **local dependencies**
-and not being able to capture long-range dependencies wasn't a huge problem.
+(and not being able to capture long-range dependencies) wasn't a huge problem.
 
 ### Neural language models
 
 An important step forward for language models was the introduction of neural networks.
 [Bengio et al., 2003](https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf) pioneered neural language models,
-where $$p(x_i \mid x_{i-1-n:i-1})$$ is given by a neural network:
+where $$p(x_i \mid x_{i-(n-1):i-1})$$ is given by a neural network:
 
 $$p(\nl{cheese} \mid \nl{ate}, \nl{the}) = \text{some-neural-network}(\nl{ate}, \nl{the}, \nl{cheese}).$$
 
@@ -289,7 +291,7 @@ Since 2003, two other key developments in neural language modeling include:
   allowed the conditional distribution of a token $$x_i$$ to depend on the
   **entire context** $$x_{1:i-1}$$ (effectively $$n = \infty$$), but these were hard to train.
 
-- **Transformers** was a more recent architecture (developed for machine translation 2017)
+- **Transformers** was a more recent architecture (developed for machine translation in 2017)
   that again returned to having fixed context length $$n$$,
   but was much **easier to train** (and exploited the parallelism of GPUs).  Also,
   $$n$$ could be made "large enough" for many applications (GPT-3 used $$n =
@@ -300,12 +302,12 @@ We will open up the hood and dive deeper into the architecture and training late
 ### Summary
 
 - Language models were first studied in the context of information theory, and can be used to estimate the entropy of English.
-- n-gram models are extremely computationally efficient and statistically inefficient.
-- They are useful for short context lengths in conjunction with another model
+- N-gram models are extremely computationally efficient and statistically inefficient.
+- N-gram models are useful for short context lengths in conjunction with another model
   (acoustic model for speech recognition or translation model for machine translation).
 - Neural language models are statistically efficient but computationally inefficient.
 - Over time, training large neural networks have become feasible enough that
-  this has become the dominant paradigm.
+  neural language models have become the dominant paradigm.
 
 ## Why does this course exist?
 
@@ -434,7 +436,7 @@ generation, which only relies on blackbox access for simplicity.
 
 ### Language models in the real-world
 
-Given the strong capabilities of language models, it is not surprisingly to see
+Given the strong capabilities of language models, it is not surprising to see
 their widespread adoption.
 
 **Research**.
@@ -455,7 +457,7 @@ Here is a very incomplete list of some high profile large language models that a
 - [AI21 Labs' writing assistance](https://www.ai21.com/)
 
 Given the performance improvement offered by something like BERT,
-it seems likely that every startup is using them to some extent.
+it seems likely that every startup using language is using these models to some extent.
 Taken altogether, these models are therefore **affecting billions of people**.
 
 An important caveat is that the way language models (or any technology) are
@@ -549,7 +551,7 @@ For example, if you prompt GPT-3 with the first line of Harry Potter
 
 > Mr. and Mrs. Dursley of number four, Privet Drive, _
 
-It will happily continuing spouting out Harry Potter with high confidence.
+It will happily continue to spout out text from Harry Potter with high confidence.
 
 **Cost and environmental impact**.
 Finally, large language models can be quite **expensive** to work with.
