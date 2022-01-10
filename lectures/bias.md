@@ -31,14 +31,18 @@ The foregrounding of the harms of AI technologies, and LLMs specifically, is a r
 Let's first consider some of the **high-level** ideas and approaches used in disciplines with established traditions around harm and safety.
 
 1. **Belmont Report and IRB.** 
-The Belmont Report was written in 1979 as a report that outlines three principles (**respect for persons**, **beneficence**, and **justice**).
-The report is the basis for the Institutional Review Board (IRB), which is a committee (e.g. at universities) that reviews and approves research involving human subjects, as a **proactive** mechanism for ensuring safety.
+- The Belmont Report was written in 1979 as a report that outlines three principles (**respect for persons**, **beneficence**, and **justice**).
+- The report is the basis for the Institutional Review Board (IRB).
+- IRBs are committees that review and approve research involving human subjects, as a **proactive** mechanism for ensuring safety.
+
 2. **Bioethics and CRISPR.**
-With the development of gene-editing technologies like CRISPR CAS, the biomedicine community set **community standards** prohibitting the use of these technologies in many settings for human gene-editing. 
-When a member of the community was found to violate these standards, they were removed from the community (e.g. fired from their instituion, removed from academic conferences) which reflects the **strong enforcement of community norms.**
+- When gene-editing technologies list CRISPR CAS were created, the biomedicine community set **community standards** prohibitting the use of these technologies for many forms of human gene-editing.
+-  When a member of the community was found to violate these standards, they were expelled from the community, which reflects the **strong enforcement of community norms.**
+
 3. **FDA and Food Safety.**
-In the US, the Food and Drug Administration (FDA) is a **regulatory** body tasked with the safety standards for food and drugs.
-Critically, the FDA is able to use **established theory** from scientific disciplines to determine what constitutes a safety violation.
+- The Food and Drug Administration (FDA) is a **regulatory** body tasked with the safety standards for food and drugs.
+- The FDA extensively samples and **tests** food and drugs, often with multiple stages, to verify their safety.
+- The FDA is able to use **established theory** from scientific disciplines to determine what properties to test for.
 
 In this lecture, we will focus on fairly concrete and lower-level concerns regarding the harms of LLMs. However.
 - there are broader societal policies that can be powerful tools for increasing safety, and
@@ -59,14 +63,20 @@ As we saw in [lecture two on capabilities](), large language models can be adapt
 - Social biases may also lead to performance disparities if LLMs fail to understand data that demostrates astereotypical or antistereotypical associations.
 
 ## Social Groups
-**Social Groups in Language.** For text, we can identify social groups based on the:
+**Social Groups in Language.** 
+For text, we can identify social groups based on the:
 - Producer (i.e. author/speaker; e.g. African American English vs. Standard American English in [Blodgett et al. (2016)](https://aclanthology.org/D16-1120.pdf)),
 - Audience (i.e. reader/listener; e.g. police language directed at Blacks vs. Whites in [Voigt et al. (2017)](https://www.pnas.org/content/pnas/114/25/6521.full.pdf)),
 - Content (i.e. people mentioned in the text; e.g. female, male, non-binary in [Dinan et al. (2020)](https://aclanthology.org/2020.emnlp-main.23.pdf)). 
 
-Note that in many settings, we are not aware of the demographics of the producer or audience. In addition, the demographic groups mentioned in text are not generally annotated. Hence, one recurring concern is how are groups are identified: in the social sciences, self-identified group information is often seen as ideal (e.g. [Saperstein (2006)](https://www.jstor.org/stable/3844405?seq=1#metadata_info_tab_contents)) but is not readily available in NLP. Consequently, many works use classifiers to identify the groups of the speaker, or the presence of certain words to indicate the content references particular groups (e.g. explicitly gendered words like "her" as well as statistically predictive strings like first and last names). 
 
-**Social Groups.**
+**Identifying Social Groups.**
+- Often, we do not know who produced or who is addressed by particular text.
+- While we can detect which groups are mentioned in text, this is not generally annotated.
+- In the social sciences, **self-identified** group information is often seen as ideal (e.g. [Saperstein (2006)](https://www.jstor.org/stable/3844405?seq=1#metadata_info_tab_contents)) but is not readily available in NLP. 
+- Consequently, many works use classifiers to identify the groups of the speaker, or the presence of certain words (e.g. explicitly gendered words like "her" as well as statistically predictive strings like first and last names). 
+
+**What Social Groups are of interest?**
 - **Protected attributes** are demographic features that may not be used as the basis for decisions (in some contexts) due to legal mandate in the US (e.g. race, gender, sexual orientation, religion, age, nationality, disability status, physical appearance, socioeconomic status)
 - Many of these attributes are significantly **contested** (e.g. race, gender), they are **human-constructed** categories as opposed to "natural" divisions, and existing work in AI often fails to reflect their contemporary treatment in the social sciences (e.g. binary gender vs. more fluid notions of gender; see [Cao and Daumé III (2020)](https://aclanthology.org/2020.acl-main.418/), [Dev et al. (2021)](https://aclanthology.org/2021.emnlp-main.150.pdf)).
 - Protected groups are not the only groups we should pay attention to, though they are a good starting point, and the relevant groups are often culturally and contextually specific [(Sambasivan et al., 2021)](https://dl.acm.org/doi/10.1145/3442188.3445896).
