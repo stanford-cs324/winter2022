@@ -3,7 +3,7 @@ title: Behavior of large language models
 ---
 
 Mon Jan 3
-: [Introduction](/lectures/introduction)
+: [Introduction](/winter2022/lectures/introduction)
   : **Lecture**{: .label .label-purple }
 : *Percy Liang*
 : 1. Why does this course exist?
@@ -11,7 +11,7 @@ Mon Jan 3
   1. Overview of the course
 
 Wed Jan 5
-: [Capabilities](/lectures/capabilities)
+: [Capabilities](/winter2022/lectures/capabilities)
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : *Percy Liang*
 : 1. Adaptation framework
@@ -22,7 +22,7 @@ Wed Jan 5
   - [On the Opportunities and Risks of Foundation Models](https://arxiv.org/pdf/2108.07258.pdf) (section 1, excluding 1.4).
 
 Mon Jan 10
-: [Social Harms](/lectures/bias)
+: [Social Harms](/winter2022/lectures/bias)
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : *Rishi Bommasani*
 : 1. Performance disparities
