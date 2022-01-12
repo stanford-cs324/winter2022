@@ -7,7 +7,7 @@ Mon Jan 31
 : *Percy Liang*
 : 1. Tokenization
   1. RNNs, Transformers
-: Required reading:
+: Discussion paper:
   - TBD
 
 Wed Feb 2
@@ -17,7 +17,7 @@ Wed Feb 2
 : 1. Objective functions
   1. Stability
   1. Debugging
-: Required reading:
+: Discussion paper:
   - TBD
 
 Mon Feb 7
@@ -25,7 +25,7 @@ Mon Feb 7
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : *Tatsunori Hashimoto*
 : 1. Scaling laws
-: Required reading:
+: Discussion paper:
   - [Scaling Laws for Neural Language Models](https://arxiv.org/pdf/2001.08361.pdf)
 
 Wed Feb 9
@@ -35,7 +35,7 @@ Wed Feb 9
 : 1. Data parallelism
   1. Model parallelism
   1. Pipeline parallelism
-: Required reading:
+: Discussion paper:
   - TBD
 
 Mon Feb 14
@@ -44,7 +44,7 @@ Mon Feb 14
 : *Percy Liang*
 : 1. Mixture of experts
   1. Memory-augmented (retrieval) models
-: Required reading:
+: Discussion paper:
   - TBD
 
 Wed Feb 16
@@ -54,7 +54,7 @@ Wed Feb 16
 : 1. Probing
   1. Fine-tuning
   1. Lightweight fine-tuning
-: Required reading:
+: Discussion paper:
   - TBD
 
 Mon Feb 21
@@ -66,5 +66,5 @@ Wed Feb 23
 : *Percy Liang*
 : 1. Training and inference costs
   1. Carbon emissions
-: Required reading:
+: Discussion paper:
   - TBD

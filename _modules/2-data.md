@@ -12,7 +12,7 @@ Wed Jan 19
 : 1. Scrutiny of existing datasets
   1. Data governance
   1. Data dignity
-: Required reading:
+: Discussion paper:
   - TBD
 
 Mon Jan 24
@@ -21,7 +21,7 @@ Mon Jan 24
 : *Tatsunori Hashimoto*
 : 1. Data poisoning
   1. Differential privacy
-: Required reading:
+: Discussion paper:
   - TBD
 
 Wed Jan 26
@@ -31,5 +31,5 @@ Wed Jan 26
 : 1. Copyright and fair use for training data
   1. Output liability
   1. Legal protections for outputs
-: Required reading:
+: Discussion paper:
   - TBD

@@ -9,7 +9,7 @@ Mon Feb 28
 : 1. Modeling images
   1. Modeling audio
   1. Multimodal models
-: Required reading:
+: Discussion paper:
   - TBD
 
 Wed Mar 2
@@ -18,7 +18,7 @@ Wed Mar 2
 : *Percy Liang*
 : 1. Forecasting
   1. Power
-: Required reading:
+: Discussion paper:
   - TBD
 
 Mon Mar 7
