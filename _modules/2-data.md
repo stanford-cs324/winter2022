@@ -13,7 +13,7 @@ Wed Jan 19
   1. Data governance
   1. Data dignity
 : Discussion paper:
-  - TBD
+  - [The Pile: An 800GB Dataset of Diverse Text for Language Modeling](https://arxiv.org/pdf/2101.00027.pdf)
 
 Mon Jan 24
 : Security and privacy
@@ -32,4 +32,4 @@ Wed Jan 26
   1. Output liability
   1. Legal protections for outputs
 : Discussion paper:
-  - TBD
+  - [Fair Learning](https://texaslawreview.org/fair-learning/)
