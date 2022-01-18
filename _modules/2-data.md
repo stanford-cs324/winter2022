@@ -22,7 +22,7 @@ Mon Jan 24
 : 1. Data poisoning
   1. Differential privacy
 : Discussion paper:
-  - TBD
+  - [Extracting Training Data from Large Language Models](https://arxiv.org/pdf/2012.07805.pdf)
 
 Wed Jan 26
 : Legal considerations
