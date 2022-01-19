@@ -6,12 +6,12 @@ Mon Jan 17
 : (no class - MLK day)
 
 Wed Jan 19
-: Data
+: [Data](../lectures/data)
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : *Percy Liang*
 : 1. Scrutiny of existing datasets
-  1. Data governance
-  1. Data dignity
+  1. Data documentation
+  1. Data ecosystems
 : Discussion paper:
   - [The Pile: An 800GB Dataset of Diverse Text for Language Modeling](https://arxiv.org/pdf/2101.00027.pdf)
 
