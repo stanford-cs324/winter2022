@@ -48,7 +48,7 @@ that:
 - Internet data overrepresents younger users from developed countries.
 - GPT-2's training data is based on Reddit, which according to Pew Internet Research's 2016 survey, 67% of Reddit users in the US are men, 64% between ages 18 and 29.
 - 8.8-15% of Wikipedians are female.
-- Harrassment on Internet could turn away certain people (trans, queer, neurodivergent people).
+- Harassment on Internet could turn away certain people (trans, queer, neurodivergent people).
 - Filtering "bad words" could further marginalize certain populations (e.g., LGBT+).
 
 Takeaway: it is crucial to understand and document the composition of the
@@ -83,12 +83,12 @@ analyzed these two datasets and found:
 - 2.1% of OpenWebText has toxicity score >= 50%
 - 4.3% of WebText (from OpenAI) has toxicity score >= 50%
 - News reliability correlates negatively with toxicity (Spearman $$\rho = -0.35$$)
-- 3% of OpenWebText comes from [banned or quarantined subredits](https://en.wikipedia.org/wiki/Controversial_Reddit_communities),
+- 3% of OpenWebText comes from [banned or quarantined subreddits](https://en.wikipedia.org/wiki/Controversial_Reddit_communities),
   e.g., /r/The_Donald and /r/WhiteRights
 
-### Clossal Clean Crawled Corpus
+### Colossal Clean Crawled Corpus
 
-The Clossal Clean Crawled Corpus ([C4](https://www.tensorflow.org/datasets/catalog/c4)) is a larger was created to train the T5 model.
+The Colossal Clean Crawled Corpus ([C4](https://www.tensorflow.org/datasets/catalog/c4)) is a larger was created to train the T5 model.
 - Started with April 2019 snapshot of Common Crawl (1.4 trillion tokens)
 - Removed ["bad words"](https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words/blob/master/en)
 - Removed code ("{")
@@ -115,7 +115,7 @@ cost thousands of dollars just to run these scripts.
   * Filed in a foreign country's official language (e.g., Japanese) is automatically translated into English
   * Automatically generated from optical character recognition (OCR)
 
-**Benchmark data contimation**.
+**Benchmark data contamination**.
 - When we are evaluating the capabilities of large language models using
   benchmark data (e.g., question-answer pairs), it makes a difference whether
   the benchmark data appears in the training data of the language model.
@@ -139,7 +139,7 @@ There are two types of contamination:
 
 Note that contamination is not due to hosting datasets (as they are usually stored in a JSON file, not as a webpage).
 
-The dataset could also be reponsible for various harms:
+The dataset could also be responsible for various harms:
 - **Representational harms**
   * They look at co-occurrence with ethnicity terms (e.g., *Jewish*) and [sentiment-bearing words](https://arxiv.org/pdf/1606.02820.pdf) (e.g., *successful*).
   * *Jewish* has 73.2% positive sentiment, *Arab* has 65.7% positive (7.5% difference).
@@ -161,7 +161,7 @@ The dataset could also be reponsible for various harms:
   * Downloaded 41 shards of Common Crawl (2016-2019).
   * Trained a binary classifier to predict WebText versus Common Crawl.
   * Sampled (kept) a document with higher probability if classifier deems it more similar to WebText.
-1. Performed **fuzzy deduplication** (detect 13-gram overlap, remove window or documents if occurred in <10 trainig documents),
+1. Performed **fuzzy deduplication** (detect 13-gram overlap, remove window or documents if occurred in <10 training documents),
    removing data from benchmark datasets.
 1. Expanded the diversity of the **data sources** (WebText2, Books1, Books2, Wikipedia).
 1. During training, Common Crawl is downsampled (Common Crawl is 82% of the dataset, but contributes only 60%).
@@ -211,7 +211,7 @@ We now step back from the specifics of language modeling datasets and discuss ge
   machine learning community, it has been a fairly ad-hoc process.
 - Examples from other fields:
   * **Electronics industry** has a well-established protocol where every
-    component has a atasheet with operating characteristics, test results,
+    component has a datasheet with operating characteristics, test results,
     recommended and usage.
   * **Nutrition labels**: The FDA mandates that food be labeled with their nutrition content.
 - Datasheets for datasets ([Gebru et al., 2018](https://arxiv.org/pdf/1803.09010.pdf)) is an influential paper that
@@ -258,9 +258,7 @@ and covers other aspects:
 - Speaker demographic (age, gender, race/ethnicity, etc.)
 - Annotator demographic (age, gender, race/ethnicity, etc.)
 
-As an example, let's look at [datasheet for The Pile](../Pile_Datasheet.pdf).
-
-### Summary
+As an example, let's look at the [datasheet for The Pile](../Pile_Datasheet.pdf).
 
 ## Data ecosystems
 
@@ -274,8 +272,8 @@ In the the databases community, there is whole subfield thinking about the ecosy
 in which data comes to be and is used, and this is particularly relevant in **industry**.
 - Some issues are discussed in the [data section of the foundation models report](https://crfm.stanford.edu/assets/report.pdf#data).
 - [Data governance](https://en.wikipedia.org/wiki/Data_governance) talks about how an organization
-  can create data, mantain its quality and security.
-- The BigScience project (intiated by Hugging Face) aims to collect a large multilingual dataset as well as train a large language model.
+  can create data, maintain its quality and security.
+- The BigScience project (initiated by Hugging Face) aims to collect a large multilingual dataset as well as train a large language model.
   The [BigScience data governance working group](https://www.youtube.com/watch?v=NL1_kMOkHm8) has been developing a framework
   to responsibly curate quality data sources, in contrast to the indiscriminate scraping of the web.
 
