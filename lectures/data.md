@@ -258,7 +258,7 @@ and covers other aspects:
 - Speaker demographic (age, gender, race/ethnicity, etc.)
 - Annotator demographic (age, gender, race/ethnicity, etc.)
 
-As an example, let's look at the [datasheet for The Pile](../Pile_Datasheet.pdf).
+As an example, let's look at the [datasheet for The Pile](https://arxiv.org/pdf/2201.07311.pdf).
 
 ## Data ecosystems
 
