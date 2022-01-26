@@ -1,0 +1,19 @@
+# General Python stuff
+venv
+__pycache__
+*.egg-info
+
+prod_env
+benchmark_output
+proxy_api_key.txt
+
+# Percy's stuff
+nav
+tags
+notes.otl
+
+# For Macs
+.DS_Store
+
+# For PyCharm and IntelliJ
+.idea
