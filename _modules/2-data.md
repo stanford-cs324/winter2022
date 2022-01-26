@@ -25,7 +25,7 @@ Mon Jan 24
   - [Extracting Training Data from Large Language Models](https://arxiv.org/pdf/2012.07805.pdf)
 
 Wed Jan 26
-: Legal considerations
+: [Legal considerations](../lectures/legality)
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : *Percy Liang*
 : 1. Copyright and fair use for training data
