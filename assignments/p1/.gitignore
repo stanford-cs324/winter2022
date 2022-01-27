@@ -1,0 +1,12 @@
+# General Python stuff
+venv
+__pycache__
+*.egg-info
+
+api_key.txt
+
+# For Macs
+.DS_Store
+
+# For PyCharm and IntelliJ
+.idea
