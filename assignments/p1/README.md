@@ -10,12 +10,14 @@ Welcome!  This codebase contains the code we provide for working on Project 1: E
 
 In addition to directly accessing the API (see project writeup for more
 details), you can use this codebase to access the LLMs programmatically.
+To do so, you will need to create a file named `api_key.txt` with your API key.
+Each student will receive their own API key; please be mindful of the token quota for the assignment. 
 
 # Using the codebase
 
-In `src/demo.py` we provide a simple example for how to use the codebase for the IMDB sentiment analysis dataset.  To run it, type `python src/demo.py`.
+In `src/demo.py` we provide a simple example for how to use the codebase for the ANLI dataset.  To run it, type `python src/demo.py`.
 
-1. We load the IMDB dataset.
+1. We load the ANLI dataset.
 To load the other datasets, specify a `dataset_name` of _anli_ or _crows_pairs_ or _stereoset_.
 2. For each example in a dataset, we retrieve the input.
 3. We give an example for mapping from the input to the query that will be submitted to the API.

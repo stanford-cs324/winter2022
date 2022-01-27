@@ -1,7 +1,7 @@
 '''
 Demo for CS 324 Winter 2022: Project 1.
 
-This file demonstrates using IMDB data how to:
+This file demonstrates using ANLI data how to:
 
 1. How to construct queries
 2. How to specify decoding parameters
@@ -21,10 +21,10 @@ from accounts import Account
 from remote_service import RemoteService
 from data import load_datasets
 
-def get_query(x: str) -> str:
+def get_query(premise: str, hypothesis:str) -> str:
     """Construct a query by specifying a prompt to accompany the input x."""
-    prompt = 'Predict the sentiment of this review.'
-    query = x + ' ' + prompt
+    prompt = 'How are the Premise and Hypothesis related?'
+    query = 'Premise: ' + premise + ' ' + 'Hypothesis: ' + hypothesis + ' ' + prompt
     return query
 
 
@@ -51,10 +51,12 @@ def make_prediction(request_result: RequestResult) -> int:
     """
     # TODO: this is a stub, please improve!
     completion = request_result.completions[0].text.lower()
-    if completion == 'positive':
-        return 1
-    elif completion == 'negative':
+    if completion == 'entailment':
         return 0
+    elif completion == 'neutral':
+        return 1
+    elif completion == 'contradiction':
+        return 2
     else:
         return 1
 
@@ -80,9 +82,8 @@ service = RemoteService()
 account: Account = service.get_account(auth)
 print(account.usages)
 
-# As an example, we demonstrate how to use the codebase to work with the IMDB dataset
-# For the first part of the assignment, you will use the ANLI dataset ('anli').
-dataset_name = 'imdb'
+# As an example, we demonstrate how to use the codebase to work with the ANLI dataset
+dataset_name = 'anli'
 train_dataset, dev_dataset, test_dataset = load_datasets(dataset_name)
 predictions = []
 
@@ -91,9 +92,9 @@ max_examples = 1  # TODO: set this to -1 once you're ready to run it on the enti
 for i, row in enumerate(test_dataset):
     if i >= max_examples:
         break
-    x, y = row['text'], row['label']
+    premise, hypothesis, y = row['premise'], row['hypothesis'], row['label']
 
-    query: str = get_query(x)
+    query: str = get_query(premise, hypothesis)
 
     decoding_params = get_decoding_params()
 
