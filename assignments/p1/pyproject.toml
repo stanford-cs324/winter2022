@@ -1,3 +1,0 @@
-# Settings for Black: The Uncompromising Code Formatter
-[tool.black]
-line-length = 120

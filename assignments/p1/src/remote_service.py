@@ -5,19 +5,17 @@ import urllib.parse
 from dataclasses import asdict
 from typing import Any, List
 
-from common.authentication import Authentication
-from common.request import Request, RequestResult
+from authentication import Authentication
+from request import Request, RequestResult
 from dacite import from_dict
-from proxy.accounts import Account
-from proxy.query import Query, QueryResult
-from proxy.service import Service, GeneralInfo
+from accounts import Account
 
 
 class RemoteServiceError(Exception):
     pass
 
 
-class RemoteService(Service):
+class RemoteService:
     def __init__(self, base_url="http://crfm-models.stanford.edu"):
         self.base_url = base_url
 
@@ -25,16 +23,6 @@ class RemoteService(Service):
     def _check_response(response: Any):
         if type(response) is dict and "error" in response and response["error"]:
             raise RemoteServiceError(response["error"])
-
-    def get_general_info(self) -> GeneralInfo:
-        response = requests.get(f"{self.base_url}/api/general_info").json()
-        return from_dict(GeneralInfo, response)
-
-    def expand_query(self, query: Query) -> QueryResult:
-        params = asdict(query)
-        response = requests.get(f"{self.base_url}/api/query?{urllib.parse.urlencode(params)}").json()
-        RemoteService._check_response(response)
-        return from_dict(QueryResult, response)
 
     def make_request(self, auth: Authentication, request: Request) -> RequestResult:
         params = {
