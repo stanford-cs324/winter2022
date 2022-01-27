@@ -28,8 +28,7 @@ Wed Jan 26
 : [Legal considerations](../lectures/legality)
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : *Percy Liang*
-: 1. Copyright and fair use for training data
-  1. Output liability
-  1. Legal protections for outputs
+: 1. Copyright law
+  1. Fair use
 : Discussion paper:
   - [Fair Learning](https://texaslawreview.org/fair-learning/)
