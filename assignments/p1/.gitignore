@@ -3,7 +3,7 @@ venv
 __pycache__
 *.egg-info
 
-proxy_api_key.txt
+api_key.txt
 
 # For Macs
 .DS_Store
