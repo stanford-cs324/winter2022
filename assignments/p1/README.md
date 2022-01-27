@@ -2,7 +2,7 @@ Welcome!  This codebase contains the code we provide for working on Project 1: E
 
 # Setup
 
-1. Create a virtual environment: `python3 -m venv venv`
+1. Create a virtual environment: `python3 -m venv venv` or `virtualenv venv`
 2. Active virtual environment (on Linux/Mac: `source venv/bin/activate`)
 3. Install packages: `pip install -r requirements.txt`
 
