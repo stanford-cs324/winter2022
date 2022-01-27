@@ -15,7 +15,8 @@ Each student will receive their own API key; please be mindful of the token quot
 
 # Using the codebase
 
-In `src/demo.py` we provide a simple example for how to use the codebase for the ANLI dataset.  To run it, type `python src/demo.py`.
+In `src/demo.py` we provide a simple example for how to use the codebase for the ANLI dataset.  
+To run it, type `python src/demo.py`.
 
 1. We load the ANLI dataset.
 To load the other datasets, specify a `dataset_name` of _anli_ or _crows_pairs_ or _stereoset_.
