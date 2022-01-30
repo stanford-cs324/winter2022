@@ -16,7 +16,7 @@ Wed Jan 19
   - [The Pile: An 800GB Dataset of Diverse Text for Language Modeling](https://arxiv.org/pdf/2101.00027.pdf)
 
 Mon Jan 24
-: Security and privacy
+: [Security and privacy](../lectures/security)
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : *Tatsunori Hashimoto*
 : 1. Data poisoning

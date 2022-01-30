@@ -8,7 +8,7 @@ Mon Jan 31
 : 1. Tokenization
   1. RNNs, Transformers
 : Discussion paper:
-  - TBD
+  - [Transformer-XL: Attentive Language Models beyond a Fixed-Length Context](https://arxiv.org/pdf/1901.02860.pdf)
 
 Wed Feb 2
 : Training
@@ -18,7 +18,7 @@ Wed Feb 2
   1. Stability
   1. Debugging
 : Discussion paper:
-  - TBD
+  - [ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators](https://arxiv.org/pdf/2003.10555.pdf)
 
 Mon Feb 7
 : Scaling laws
