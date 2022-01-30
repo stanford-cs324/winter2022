@@ -45,7 +45,7 @@ Mon Feb 14
 : 1. Mixture of experts
   1. Memory-augmented (retrieval) models
 : Discussion paper:
-  - TBD
+  - [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/pdf/2005.11401.pdf)
 
 Wed Feb 16
 : Adaptation
