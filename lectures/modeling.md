@@ -113,9 +113,9 @@ Example:
 The output of learning is:
 - Updated vocabulary $$\sV$$: [a, c, e, h, t, r, ca, th, the]
 - The merges that we made (important for applying the tokenizer):
-  * *t, h* $$\\Rightarrow$$ *th*
-  * *th, e* $$\\Rightarrow$$ *the*
-  * *c, a* $$\\Rightarrow$$ *ca*
+  * *t, h* $$\Rightarrow$$ *th*
+  * *th, e* $$\Rightarrow$$ *the*
+  * *c, a* $$\Rightarrow$$ *ca*
 
 **Applying the tokenizer**.
 To tokenize a new string, apply the merges in the same order:
