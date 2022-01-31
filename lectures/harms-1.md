@@ -1,7 +1,6 @@
 ---
 layout: page
-grand_parent: Lectures
-parent: Behavior
+parent: Lectures
 title: Harms I
 nav_order: 2.2
 usemathjax: true

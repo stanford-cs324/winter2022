@@ -3,7 +3,6 @@ layout: page
 parent: Lectures
 title: Data
 nav_order: 3
-has_children: true
 usemathjax: true
 ---
 So far, we've talked about the behavior (capabilities and harms) of large language models.

@@ -1,7 +1,6 @@
 ---
 layout: page
-grand_parent: Lectures
-parent: Data
+parent: Lectures
 title: Legality
 nav_order: 3.3
 usemathjax: true

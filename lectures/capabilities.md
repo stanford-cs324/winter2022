@@ -1,7 +1,6 @@
 ---
 layout: page
-grand_parent: Lectures
-parent: Behavior
+parent: Lectures
 title: Capabilities
 nav_order: 2.1
 usemathjax: true

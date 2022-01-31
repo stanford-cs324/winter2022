@@ -1,7 +1,6 @@
 ---
 layout: page
-grand_parent: Lectures
-parent: Data
+parent: Lectures
 title: Security
 nav_order: 3.2
 ---

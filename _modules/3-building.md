@@ -2,7 +2,7 @@
 title: Building large language models
 ---
 Mon Jan 31
-: Modeling
+: [Modeling](../lectures/modeling)
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : *Percy Liang*
 : 1. Tokenization
