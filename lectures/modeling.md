@@ -129,8 +129,8 @@ To tokenize a new string, apply the merges in the same order:
 - In order to reduce data sparsity even further, we can run BPE on bytes instead of Unicode characters ([Wang et al. 2019](https://arxiv.org/pdf/1909.03341.pdf)).
 - Example in Chinese: 
 
-> *今天* [gloss: *today*]
-> [x62, x11, 4e, ca]
+> *今天* [gloss: *today*]<br>
+> [x62, x11, 4e, ca]<br>
 
 ### Unigram model (SentencePiece)
 
@@ -140,9 +140,6 @@ We now describe the **unigram model** ([Kudo 2018](https://arxiv.org/pdf/1804.10
 - It was of the tokenizations supported in the **SentencePiece** tool ([Kudo & Richardson, 2018](https://aclanthology.org/D18-2012.pdf)), along with BPE.
 - It was used to train T5 and Gopher.
 
-<!--**WordPiece** ([Wu et al. 2016](https://arxiv.org/pdf/1609.08144v2.pdf)),
-  which was used initially for machine translation and then used in BERT.-->
-
 Given a sequence $$x_{1:L}$$, a tokenization $$T$$ is a set of 
 
 $$p(x_{1:L}) = \prod_{(i, j) \in T} p(x_{i:j}).$$
@@ -150,7 +147,7 @@ $$p(x_{1:L}) = \prod_{(i, j) \in T} p(x_{i:j}).$$
 Example: 
 - Training data (string): $$\nl{ababc}$$
 - Tokenization $$T = \{ (1, 2), (3, 4), (5, 5) \}$$ ($$\sV = \{ \nl{ab}, \nl{c} \}$$)
-- Likelihood: $$p(x_{1:L}) = \frac{2}{3} \cdot \frac{2}{3} \cdot 1 = \frac{4}{9}$$.
+- Likelihood: $$p(x_{1:L}) = \frac{2}{3} \cdot \frac{2}{3} \cdot \frac{1}{3} = \frac{4}{9}$$.
 
 **Algorithm**:
 - Start with a "reasonably big" seed vocabulary $$\sV$$.
@@ -158,13 +155,6 @@ Example:
   * Given $$\sV$$, optimize $$p(x)$$ and $$T$$ using the EM algorithm.
   * Compute $$\text{loss}(x)$$ for each token $$x \in \sV$$ capturing how much the likelihood would be reduced if $$x$$ were removed from $$\sV$$.
   * Sort by loss and keep the top 80% tokens in $$\sV$$.
-
-<!--- Jet makers feud over seat width with big orders at stake<br>
-- [␣J, et, ␣makers, ␣fe, ud, ␣over, ␣seat, ␣width, ␣with, ␣big, ␣orders, ␣at, ␣stake]<br>-->
-
-<!--The basic idea:
-- Train a simple generative model (unigram) over the training corpus.
-- Greedily merge the two characters that increases the likelihood of the data under the generative model.-->
 
 ### Comparing tokenizers
 
@@ -286,7 +276,7 @@ and maps them into **contextual embeddings**.
 
 def $$\SequenceModel(\x: \R^{d \times L}) \to \R^{d \times L}$$:
 - *Process each element $$x_i$$ in the sequence $$\x$$ with respect to other elements.*
-- [abstract implementation (e.g., $$\FeedForwardSequenceModel$$, $$\SequenceRNN$$, $$\Transformer$$)]
+- [abstract implementation (e.g., $$\FeedForwardSequenceModel$$, $$\SequenceRNN$$, $$\TransformerBlock$$)]
 
 The simplest type of sequence model is based on feedforward networks
 ([Bengio et al., 2003](https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf))
@@ -427,7 +417,8 @@ We could in principle just take the $$\FeedForward \circ \SelfAttention$$ sequen
 but that network would be hard to optimize (for the same vanishing gradients problems that afflicted RNNs, now just along the depth direction).
 So we have to do two shenanigans to make sure that the network is trainable.
 
-One trick from computer vision is **residual connections** (ResNet).
+**Residual connections**.
+One trick from computer vision is residual connections (ResNet).
 Instead of applying some function $$f$$:
 
 $$f(\x),$$
@@ -436,7 +427,9 @@ we add a residual (skip) connection so that if $$f$$'s gradients vanish, gradien
 
 $$\x + f(\x).$$
 
-Another trick is **layer normalization**, which takes a takes a vector and makes sure its elements are too big:
+**Layer normalization**.
+Another trick is [layer normalization](https://arxiv.org/pdf/1607.06450.pdf),
+which takes a takes a vector and makes sure its elements are too big:
 
 def $$\LayerNorm(\x: \R^{d \times L}) \to \R^{d \times L}$$:
 - *Make each $$x_i$$ not too big or small*.
@@ -447,7 +440,7 @@ def $$\AddNorm(f: (\R^{d \times L} \to \R^{d \times L}), \x: \R^{d \times L}) \t
 - *Safely apply $$f$$ to $$\x$$*.
 - Return $$\LayerNorm(\x + f(\x))$$.
 
-Finally, we can define the **Transformer** block succinctly:
+Finally, we can define the Transformer block succinctly as follows:
 
 def $$\TransformerBlock(\x: \R^{d \times L}) \to \R^{d \times L}$$:
 - *Process each element $$x_i$$ in context.*
