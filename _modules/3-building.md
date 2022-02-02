@@ -11,7 +11,7 @@ Mon Jan 31
   - [Transformer-XL: Attentive Language Models beyond a Fixed-Length Context](https://arxiv.org/pdf/1901.02860.pdf)
 
 Wed Feb 2
-: Training
+: [Training](../lectures/training)
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : *Percy Liang*
 : 1. Objective functions
