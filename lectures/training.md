@@ -207,6 +207,7 @@ Based on BERT-scaled experiments, they decided on the following transformations
 for the final model:
 - Mask 30% of tokens in a document
 - Permute all sentences
+
 They demonstrated strong results on both classification and generation tasks
 using fine-tuning.
 
@@ -292,7 +293,7 @@ $$g_t \leftarrow \frac{1}{|B_t|} \sum_{\x \in B_t} \nabla_\theta (-\log p_\theta
 
 $$m_t \leftarrow \beta_1 m_{t-1} + (1 - \beta_1) g_t$$
 
-$$m_t \leftarrow \beta_2 v_{t-1} + (1 - \beta_2) g_t^2$$
+$$v_t \leftarrow \beta_2 v_{t-1} + (1 - \beta_2) g_t^2$$
 
 - Do bias correction:
 
@@ -302,7 +303,7 @@ $$\hat v_t \leftarrow v_t / (1 - \beta_2^t)$$
 
 - Update parameters:
 
-$$\theta_t \leftarrow \theta_{t-1} - \eta \hat m_t / (\sqrt{\hat v_t} + \epsilon).$$
+$$\theta_t \leftarrow \theta_{t-1} - \eta \, \hat m_t / (\sqrt{\hat v_t} + \epsilon).$$
 
 **Memory**.
 Using Adam increases the amount of storage from
@@ -318,7 +319,7 @@ was proposed as a way to reduce this memory footprint.
 - It can be difficult to get AdaFactor to train (see [Twitter thread](https://twitter.com/_arohan_/status/1468673364889726985?s=20&t=i7E0NN5ytysukMGVWG7lfQ) and [blog post](https://blog.ceshine.net/post/adafactor/)).
 
 Mixed-precision training is another method for reducing
-training ([Narang et al., 2018](https://arxiv.org/pdf/1710.03740.pdf)).
+memory ([Narang et al., 2018](https://arxiv.org/pdf/1710.03740.pdf)).
 - Default: FP32 (32-bit floating point).
 - Option: FP16 (16-bit floating point), but the problem is that any value less than $$2^{-24}$$ becomes 0.
 - Solution: store master weights in FP32 and do everything else in FP16.
@@ -337,7 +338,7 @@ training ([Narang et al., 2018](https://arxiv.org/pdf/1710.03740.pdf)).
 **Initialization**.
 - Given a matrix $$W \in \R^{m \times n}$$, the standard initialization (xavier initialization) is
   $$W_{ij} \sim \sN(0, 1/n)$$, where $$n$$ is the fan-in.
-- GPT-2 and GPT-3 scale the weights by an additional $$1/\sqrt{N}$$.
+- GPT-2 and GPT-3 scale the weights by an additional $$1/\sqrt{N}$$, where $$N$$ is the number of residual layers.
 - T5 scales the attention matrices by an additional $$1/\sqrt{d}$$ ([code](https://github.com/tensorflow/mesh/blob/master/mesh_tensorflow/transformer/attention.py#L459)).
 
 For GPT-3:
@@ -345,7 +346,7 @@ For GPT-3:
 - Batch size: 3.2 million tokens (~1500 sequences)
 - Use gradient clipping ($$g_t \leftarrow g_t / \min(1, \|g\|_2)$$).
 - Linear learning rate warmup (over first 375 million tokens).
-- Cosine learning rate that goes down to 10% of value.
+- [Cosine learning rate](https://arxiv.org/pdf/1608.03983v5.pdf) that goes down to 10% of value.
 - Gradually increase the batch size.
 - Weight decay 0.1.
 
