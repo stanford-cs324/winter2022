@@ -36,7 +36,7 @@ Wed Feb 9
   1. Model parallelism
   1. Pipeline parallelism
 : Discussion paper:
-  - TBD
+  - [DeepSpeed: Extreme-scale model training for everyone](https://www.microsoft.com/en-us/research/blog/deepspeed-extreme-scale-model-training-for-everyone/)
 
 Mon Feb 14
 : Modular architectures
