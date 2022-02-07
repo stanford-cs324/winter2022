@@ -21,14 +21,6 @@ Wed Feb 2
   - [ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators](https://arxiv.org/pdf/2003.10555.pdf)
 
 Mon Feb 7
-: Scaling laws
-  : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
-: *Tatsunori Hashimoto*
-: 1. Scaling laws
-: Discussion paper:
-  - [Scaling Laws for Neural Language Models](https://arxiv.org/pdf/2001.08361.pdf)
-
-Wed Feb 9
 : Parallelism
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : *Christopher Ré*
@@ -37,6 +29,14 @@ Wed Feb 9
   1. Pipeline parallelism
 : Discussion paper:
   - [DeepSpeed: Extreme-scale model training for everyone](https://www.microsoft.com/en-us/research/blog/deepspeed-extreme-scale-model-training-for-everyone/)
+
+Wed Feb 9
+: Scaling laws
+  : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
+: *Tatsunori Hashimoto*
+: 1. Scaling laws
+: Discussion paper:
+  - [Scaling Laws for Neural Language Models](https://arxiv.org/pdf/2001.08361.pdf)
 
 Mon Feb 14
 : Modular architectures
