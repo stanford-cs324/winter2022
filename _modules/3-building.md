@@ -55,7 +55,7 @@ Wed Feb 16
   1. Fine-tuning
   1. Lightweight fine-tuning
 : Discussion paper:
-  - TBD
+  - [The Power of Scale for Parameter-Efficient Prompt Tuning](https://arxiv.org/abs/2104.08691)
 
 Mon Feb 21
 : no class (Presidents' Day)
