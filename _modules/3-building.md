@@ -50,7 +50,7 @@ Mon Feb 14
 Wed Feb 16
 : Adaptation
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
-: *Michael Xie*
+: *Sang Michael Xie*
 : 1. Probing
   1. Fine-tuning
   1. Lightweight fine-tuning
