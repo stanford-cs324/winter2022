@@ -1,12 +1,11 @@
 ---
 layout: page
-grand_parent: WIP Lectures
-parent: WIP Building
-title: WIP Scaling laws
-nav_order: 3.4
-usemathjax: true
+parent: Lectures
+title: Scaling laws
+nav_order: 4.5
 ---
-*UNDER CONSTRUCTION*
+This lecture was delivered via slides.
+A link is available on [Canvas](https://canvas.stanford.edu/courses/149841/files/9263642?module_item_id=1150105).
 
 ## Further reading
 

@@ -3,21 +3,16 @@ title: Beyond large language models
 ---
 
 Mon Feb 28
-: Multimodality
+: Guest lecture
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
-: *Christopher Ré*
-: 1. Modeling images
-  1. Modeling audio
-  1. Multimodal models
+: *TBD*
 : Discussion paper:
   - TBD
 
 Wed Mar 2
-: Outlook
+: Guest lecture
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
-: *Percy Liang*
-: 1. Forecasting
-  1. Power
+: *TBD*
 : Discussion paper:
   - TBD
 

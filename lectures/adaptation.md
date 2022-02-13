@@ -1,12 +1,11 @@
 ---
 layout: page
-grand_parent: WIP Lectures
-parent: WIP Building
-title: WIP Adaptation
-nav_order: 3.8
+parent: Lectures
+title: Adaptation
+nav_order: 4.7
 usemathjax: true
 ---
-*UNDER CONSTRUCTION*
+*UNDER CONSTRUCTION.*
 
 ## Further reading
 

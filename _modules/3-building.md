@@ -21,7 +21,7 @@ Wed Feb 2
   - [ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators](https://arxiv.org/pdf/2003.10555.pdf)
 
 Mon Feb 7
-: Parallelism
+: [Parallelism](../lectures/parallelism)
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : *Christopher Ré*
 : 1. Data parallelism
@@ -31,7 +31,7 @@ Mon Feb 7
   - [DeepSpeed: Extreme-scale model training for everyone](https://www.microsoft.com/en-us/research/blog/deepspeed-extreme-scale-model-training-for-everyone/)
 
 Wed Feb 9
-: Scaling laws
+: [Scaling laws](../lectures/scaling-laws)
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : *Tatsunori Hashimoto*
 : 1. Scaling laws
@@ -39,7 +39,7 @@ Wed Feb 9
   - [Scaling Laws for Neural Language Models](https://arxiv.org/pdf/2001.08361.pdf)
 
 Mon Feb 14
-: Modular architectures
+: [Modular architectures](../lectures/modularity)
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : *Percy Liang*
 : 1. Mixture of experts
@@ -48,7 +48,7 @@ Mon Feb 14
   - [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/pdf/2005.11401.pdf)
 
 Wed Feb 16
-: Adaptation
+: [Adaptation](../lectures/adaptation)
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : *Sang Michael Xie*
 : 1. Probing
@@ -61,10 +61,10 @@ Mon Feb 21
 : no class (Presidents' Day)
 
 Wed Feb 23
-: Environmental impact
+: [Environmental impact](../lectures-environment)
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : *Percy Liang*
 : 1. Training and inference costs
   1. Carbon emissions
 : Discussion paper:
-  - TBD
+  - [Carbon Emissions and Large Neural Network Training](https://arxiv.org/pdf/2104.10350.pdf)
