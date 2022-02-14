@@ -165,10 +165,6 @@ Impact:
 - Given the same string, Jurassic requires 28% fewer tokens than GPT-3, so it is 1.4x faster
 - Both Jurassic and GPT-3 use the same context size (2048), so one can feed in 39% more text into the prompt.
 
-<!--- Include multi-word expressions:
-  * every␣so␣slightly
-  * ␣Tony␣Stark-->
-
 Examples of tokenizations for both GPT-3 and Jurassic ([demo](https://crfm-models.stanford.edu/static/index.html?prompt=Abraham%20Lincoln%20lived%20at%20the%20White%20House.&settings=echo_prompt%3A%20true%0Amax_tokens%3A%200%0Atop_k_per_token%3A%205%0Amodel%3A%20%24%7Bmodel%7D&environments=model%3A%20%5Bopenai%2Fdavinci%2C%20ai21%2Fj1-jumbo%5D)):
 - GPT-3: [Ab, raham, ␣Lincoln, ␣lived, ␣at, ␣the, ␣White, ␣House, .]
 - Jurassic: [Abraham␣Lincoln, ␣lived, ␣at␣the␣White␣House, .]
