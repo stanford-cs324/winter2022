@@ -4,8 +4,9 @@ parent: Lectures
 title: Scaling laws
 nav_order: 4.5
 ---
-This lecture was delivered via slides.
-A link is available on [Canvas](https://canvas.stanford.edu/courses/149841/files/9263642?module_item_id=1150105).
+This lecture was delivered via slides. Powerpoint slides at
+[Canvas](https://canvas.stanford.edu/courses/149841/files/9263642?module_item_id=1150105)
+and PDFs are available [here](../assets/pdfs/Scaling laws pdf.pdf)
 
 ## Further reading
 
