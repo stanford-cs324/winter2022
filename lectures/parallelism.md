@@ -4,7 +4,7 @@ parent: Lectures
 title: Parallelism
 nav_order: 4.4
 ---
-This lecture was delivered via whiteboard and slides.
+This lecture was delivered via whiteboard and slides. A draft of the lecture is provided <a href="../Parallelism.pdf" target="_blank">here</a>. Further supporting discussion on parallelism more generally is given <a href="../An_Ancient_Tale_of_Parallelism.pdf" target="_blank">here</a>.
 
 ## Further reading
 
