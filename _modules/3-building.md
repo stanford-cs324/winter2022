@@ -39,7 +39,7 @@ Wed Feb 9
   - [Scaling Laws for Neural Language Models](https://arxiv.org/pdf/2001.08361.pdf)
 
 Mon Feb 14
-: [Modular architectures](../lectures/modularity)
+: [Modular architectures](../lectures/selective-architectures)
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
 : *Percy Liang*
 : 1. Mixture of experts
