@@ -294,7 +294,7 @@ Setup:
 - Trained a 1.1T parameter model
 - 512 experts (more than GLaM), 32 layers, 4096 hidden units
 - Trained on 112 billion tokens on webpages, forums, books, news, etc.
-- Strong gains for smaller models, diminshing gains for larger models
+- Strong gains for smaller models, diminishing gains for larger models
 
 ![FacebookMoE results](../images/facebook-moe-results.png)
 
@@ -317,7 +317,7 @@ Motivation:
 - The main difference is that molecular dynamics simulations is compute-heavy and doesn't require network bandwidth.
 
 Main considerations:
-- Many nodes ($$10^3 \sim 10^6$$ heterogenous PCs)
+- Many nodes ($$10^3 \sim 10^6$$ heterogeneous PCs)
 - Frequent node failures (5-20% have at least one failure/day)
 - Home-Internet communication bandwidth (100Mbps; compared to 400Gbps for the Azure supercomputer)
 
@@ -408,7 +408,7 @@ $$p(z \mid x) = \frac{\exp(\BERT_\text{d}(z) \cdot \BERT_\text{q}(x))}{\sum_{z' 
 - Considers on passages of 100 words with title of Wikipedia article
 - Trained on query, positive example, negative examples: $$(q, p^+, p^-_1, \dots, p^-_n)$$ from QA datasets (NaturalQuestions, TriviQA, etc.)
   * Negative passages: random + passages retrieved using BM25 on $$q$$ that don't contain the answer
-- Inference: uses [FAISS](https://github.com/facebookresearch/faiss) (Facebook AI Similiarity Search)
+- Inference: uses [FAISS](https://github.com/facebookresearch/faiss) (Facebook AI Similarity Search)
 
 **Generator**.
 
