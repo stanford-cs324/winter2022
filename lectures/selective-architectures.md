@@ -419,7 +419,7 @@ $$p(y \mid z, x) = p(y \mid \text{concat}(z, x)).$$
 
 **Training**.
 - Initialize with BART, DPR (initialized with BERT).
-- Tune BART and $$BERT_\text{q}$$.
+- Tune $$\text{BART}$$ and $$\BERT_\text{q}$$.
 
 **Experiments**.
 - Example of RAG-Token on Jeopardy question generation given input *Hemingway*:
