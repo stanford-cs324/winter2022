@@ -15,7 +15,7 @@ $$
 <img src="../images/adaptation.png" alt="Adaptation" style="width:400px;margin-left:auto;margin-right:auto;"/>
 
 - By only prompting language models (.e.g, in-context learning), we can already do some tasks.
-- However, prompting doesn’t work on the full range of “downstream tasks* (e.g., NLI, QA, converting web tables to text, parsing EHR records, etc.)
+- However, prompting doesn’t work on the full range of *downstream tasks* (e.g., NLI, QA, converting web tables to text, parsing EHR records, etc.)
 - Downstream tasks can differ from LM training data (e.g., the Pile) in format and topic, or require updating new knowledge over time.
 - LMs need to be adapted to the downstream task with task-specific data or domain knowledge.
 
