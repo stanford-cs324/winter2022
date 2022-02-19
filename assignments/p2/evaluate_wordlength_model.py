@@ -29,7 +29,7 @@ tokenizer_kwargs = {
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description='Evaluate the trained wordlength model')
-    parser.add_argument('--model_dir', type=str, help="where the trained model is saved")
+    parser.add_argument('--model_dir', type=str, help="where the trained model is saved. Can also input a huggingface model name like gpt2 to get the default pretrained model.")
     parser.add_argument('--eval_data_dir', type=str, help="directory of the evaluation data")
     args = parser.parse_args()
 
