@@ -20,9 +20,11 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 
 
 def linecount(filename):
-    out = subprocess.Popen(['wc', '-l', filename],
-                           stdout=subprocess.PIPE).communicate()[0]
-    return int(out.strip().partition(b' ')[0])
+    count = 0
+    with open(filename, 'r') as f:
+        for line in f:
+            count += 1
+    return count
 
 
 def merge_files(filepaths, outpath):
@@ -93,13 +95,14 @@ if __name__ == "__main__":
 
     data_dir = Path(args.data_dir)
     save_dir = Path(args.output_dir)
+    save_dir.mkdir(exist_ok=True, parents=True)
 
     splits = ['train', 'val']
 
     if not args.reduce_step:
         for split in splits:
             path = save_dir / f'openwebtext_{args.dataset_name}_{split}.json'
-            txt_path = data_dir / f'openwebtext_default_{split}.json'
+            txt_path = data_dir / f'openwebtext_{args.dataset_name}_{split}.json'
             save_path = process_fn(save_dir, split, txt_path)
             save_path = Path(save_path)
     else:
