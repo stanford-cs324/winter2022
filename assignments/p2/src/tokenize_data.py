@@ -6,6 +6,7 @@ import os
 from pathlib import Path
 import json
 import shutil
+import multiprocessing
 
 from transformers import (
     CONFIG_MAPPING,
@@ -82,11 +83,11 @@ if __name__ == "__main__":
 
     curr_save_dir = Path(args.output_dir) / f'openwebtext_{ds_type}_tokenized'
     if not curr_save_dir.exists():
-        curr_save_dir.mkdir(exist_ok=True)
+        curr_save_dir.mkdir(exist_ok=True, parents=True)
         datasets = datasets.map(
             tokenize_function,
             batched=True,
-            num_proc=len(os.sched_getaffinity(0)),
+            num_proc=multiprocessing.cpu_count(),
             remove_columns=column_names,
             load_from_cache_file=True,
         )
@@ -136,7 +137,7 @@ if __name__ == "__main__":
     datasets = datasets.map(
         group_texts,
         batched=True,
-        num_proc=len(os.sched_getaffinity(0)),
+        num_proc=multiprocessing.cpu_count(),
         load_from_cache_file=True,
     )
     curr_save_dir = Path(args.output_dir) / f'openwebtext_{ds_type}_tokenized_grouped'
