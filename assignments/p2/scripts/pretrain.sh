@@ -1,6 +1,6 @@
 #!/bin/bash
 set -x
-CACHE=./scr/cache
+CACHE=./cache
 mkdir -p $CACHE
 export HF_HOME=$CACHE
 export TRANSFORMERS_CACHE=$CACHE

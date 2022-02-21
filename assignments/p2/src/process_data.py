@@ -91,6 +91,7 @@ if __name__ == "__main__":
     parser.add_argument('--chunk_idx', type=int, default=0, help="which chunk to generate")
     parser.add_argument('--total_chunks', type=int, default=8, help="total number of chunks")
     parser.add_argument('--reduce_step', action='store_true', help="whether to do the reduce step instead of the mapping step")
+    parser.add_argument('--small', action='store_true', help="start with defaultsmall dataset")
     args = parser.parse_args()
 
     data_dir = Path(args.data_dir)
@@ -102,7 +103,7 @@ if __name__ == "__main__":
     if not args.reduce_step:
         for split in splits:
             path = save_dir / f'openwebtext_{args.dataset_name}_{split}.json'
-            txt_path = data_dir / f'openwebtext_{args.dataset_name}_{split}.json'
+            txt_path = data_dir / f'openwebtext_default_{split}.json'
             save_path = process_fn(save_dir, split, txt_path)
             save_path = Path(save_path)
     else:
