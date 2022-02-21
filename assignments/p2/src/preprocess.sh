@@ -1,10 +1,10 @@
 #!/bin/bash
 
-if [[ $# -lt 2 ]]; then
-    echo "Main entry point for preprocessing data. Make sure the output directories don't exist already when running this script (e.g., from a previous failed run)"
+if [[ $# -lt 1 ]]; then
+    echo "Main entry point for preprocessing data."
     echo "Usage:"
     echo
-    echo "    $0 <DATA_DIR (e.g., openwebtext)> <OUTPUT_DIR (e.g., openwebtext_wordlength)> <TOKENIZER_NAME (e.g., gpt2)> <NUM_TOTAL_CHUNKS (e.g., 64)> <NUM_CHUNKS (e.g., 10)>"
+    echo "    $0 <input_dataset_name (e.g., openwebtext)> <output_dataset_name (e.g., openwebtext_wordlength)> <tokenizer_name (e.g., gpt2)> <num_total_chunks (e.g., 64)> <num_chunks (e.g., 10)"
     echo
     exit 1
 fi
@@ -12,19 +12,20 @@ fi
 CACHE=./cache
 mkdir -p $CACHE
 
-DATA_DIR=$1
-OUTPUT_DIR=$2
-TOKENIZER_NAME=$3
+input_dataset_name=$1;
+output_dataset_name=$2;
+tokenizer_name=$3
 
-mkdir -p $OUTPUT_DIR
-NUM_TOTAL_CHUNKS=${4:-64}
-NUM_CHUNKS=${5:-10} # only process a subset of the total chunks
+mkdir -p $output_dataset_name
+num_total_chunks=${4:-64}
+num_chunks=${5:-10} # only process a subset of the total chunks. Set to num_total_chunks to process full dataset
 
-for ((CHUNK_IDX=0; CHUNK_IDX < $NUM_CHUNKS; CHUNK_IDX++)); do
+# Do chunks in parallel
+for ((CHUNK_IDX=0; CHUNK_IDX < $num_chunks; CHUNK_IDX++)); do
     python src/process_data.py \
-        --data_dir $DATA_DIR \
-        --output_dir $OUTPUT_DIR \
-        --total_chunks $NUM_TOTAL_CHUNKS \
+        --data_dir $input_dataset_name \
+        --output_dir $output_dataset_name \
+        --total_chunks $num_total_chunks \
         --chunk_idx $CHUNK_IDX &
 done
 
@@ -32,11 +33,11 @@ wait
 
 # we tokenize the data in chunks without merging
 
-DATA_DIR=$OUTPUT_DIR
+DATA_DIR=$output_dataset_name
 CACHE=./cache
 mkdir -p $CACHE
 
 python src/tokenize_data.py \
     --data_dir $DATA_DIR \
     --cache_dir ${CACHE} \
-    --model_name ${TOKENIZER_NAME} \
+    --model_name ${tokenizer_name} \
