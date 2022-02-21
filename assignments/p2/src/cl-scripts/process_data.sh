@@ -13,6 +13,6 @@ cl run \
      --request-gpus 0 \
      --request-cpus 8 \
      --request-network \
-     :raw_data \
+     :openwebtext \
      :src \
      "export PYTHONPATH=.; ${CMD}"

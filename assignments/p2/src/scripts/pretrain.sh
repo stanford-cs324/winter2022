@@ -9,17 +9,28 @@ export HF_DATASETS_IN_MEMORY_MAX_SIZE=100000000000
 export TORCH_EXTENSIONS_DIR=$CACHE
 export WANDB_DISABLED=true
 
-DATA_NAME=$1
+DATA_NAME=${DATA_NAME:-wordlength}
+SEED=${SEED:-1111}
+MODEL_NAME=${MODEL_NAME:-gpt2}
+PER_DEVICE_BATCH_SIZE=${PER_DEVICE_BATCH_SIZE:-""}
+ACCUM_STEPS=${ACCUM_STEPS:-""}
+MAX_STEPS=${MAX_STEPS:-""}
+LR=${LR:-""}
+WARMUP_STEPS=${WARMUP_STEPS:-""}
+
+while [ $# -gt 0 ]; do
+
+   if [[ $1 == *"--"* ]]; then
+        param="${1/--/}"
+        declare $param="$2"
+   fi
+
+  shift
+done
+
 TOKENIZED_DATA=openwebtext_${DATA_NAME}_tokenized_grouped
 OUTPUT_DIR=./output
 mkdir -p $OUTPUT_DIR
-SEED=$2
-MODEL_NAME=$3 # e.g., gpt2 or gpt2-medium
-PER_DEVICE_BATCH_SIZE=$4
-ACCUM_STEPS=$5
-MAX_STEPS=$6
-LR=$7
-WARMUP_STEPS=$8
 
 python src/run_clm.py \
     --model_name_or_path ${MODEL_NAME} \
