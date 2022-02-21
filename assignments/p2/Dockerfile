@@ -42,7 +42,7 @@ WORKDIR /tmp/apex_installation/apex
 RUN pip install --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
 WORKDIR /
 
-ADD ./requirements.txt requirements.txt
+ADD ./requirements_docker.txt requirements.txt
 RUN pip install -r requirements.txt
 RUN python -c "import nltk; nltk.download('punkt')"
 
