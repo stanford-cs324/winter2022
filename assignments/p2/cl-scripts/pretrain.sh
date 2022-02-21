@@ -5,21 +5,19 @@ set -x
 RUN_NAME="pretrain_openwebtext_wordlength"
 DATA_NAME=wordlength
 SEED=1111 # random seed
-MODEL_NAME=gpt2
 WORKSHEET_NAME=cs324-project2 # TODO change this!!
 
+model_name_or_path=gpt2
 # TODO FILL THESE HYPERPARAMETERS IN.
 # DO NOT EXCEED ACCUM_STEPS * MAX_STEPS > 100000
-PER_DEVICE_BATCH_SIZE=
-ACCUM_STEPS=
-MAX_STEPS=
-LR=
-WARMUP_STEPS=
+per_device_batch_size=
+gradient_accumulation_steps=
+max_steps=
+learning_rate=
+warmup_steps=
 # ============================
 
-
-
-CMD="bash src/scripts/pretrain.sh --DATA_NAME ${DATA_NAME} --SEED ${SEED} --MODEL_NAME ${MODEL_NAME} --PER_DEVICE_BATCH_SIZE ${PER_DEVICE_BATCH_SIZE} --ACCUM_STEPS ${ACCUM_STEPS} --MAX_STEPS ${MAX_STEPS} --LR ${LR} --WARMUP_STEPS ${WARMUP_STEPS}"
+CMD="bash src/scripts/pretrain.sh ${DATA_NAME} ${SEED} --model_name_or_path ${MODEL_NAME} --per_device_batch_size ${per_device_batch_size} --gradient_accumulation_steps ${gradient_accumulation_steps} --max_steps ${max_steps} --learning_rate ${learning_rate} --warmup_steps ${warmup_steps} --save_steps 10000 --lr_scheduler_type linear"
 cl run \
      -n ${RUN_NAME} \
      -w ${WORKSHEET_NAME} \
