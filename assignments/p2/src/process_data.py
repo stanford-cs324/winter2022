@@ -102,14 +102,14 @@ if __name__ == "__main__":
 
     if not args.reduce_step:
         for split in splits:
-            path = save_dir / f'openwebtext_{args.dataset_name}_{split}.json'
+            path = save_dir / f'{split}.json'
             txt_path = data_dir / f'openwebtext_default_{split}.json'
             save_path = process_fn(save_dir, split, txt_path)
             save_path = Path(save_path)
     else:
         # merge data (optional, not necessarily recommended)
         for split in splits:
-            path = save_dir / f'openwebtext_{args.dataset_name}_{split}.json'
+            path = save_dir / f'{split}.json'
             filepaths = [f"{path}_{i}" for i in range(args.total_chunks)]
             merge_files(filepaths, path)
 
