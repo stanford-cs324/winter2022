@@ -32,6 +32,7 @@ TOKENIZED_DATA=openwebtext_${DATA_NAME}_tokenized_grouped
 OUTPUT_DIR=./output
 mkdir -p $OUTPUT_DIR
 
+# Other possible args are in https://github.com/huggingface/transformers/blob/master/src/transformers/training_args.py
 python src/run_clm.py \
     --model_name_or_path ${MODEL_NAME} \
     --tokenized_data_dir ${TOKENIZED_DATA} \
