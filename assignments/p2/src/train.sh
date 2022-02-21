@@ -1,17 +1,7 @@
 #!/bin/bash
 
-CACHE=./cache
-mkdir -p $CACHE
-
-export HF_HOME=$CACHE
-export TRANSFORMERS_CACHE=$CACHE
-export HF_DATASETS_CACHE=$CACHE
-export HF_DATASETS_IN_MEMORY_MAX_SIZE=100000000000
-export TORCH_EXTENSIONS_DIR=$CACHE
-export WANDB_DISABLED=true
-
-if [[ $# -eq 0 ]]; then
-    echo "Main entry point for training GPT-2."
+if [[ $# -lt 2 ]]; then
+    echo "Main entry point for training."
     echo "Usage:"
     echo
     echo "    $0 <dataset_name (e.g., openwebtext_wordlength)> <seed (e.g., 1)> [additional arguments]"
@@ -32,18 +22,26 @@ if [[ $# -eq 0 ]]; then
     exit 1
 fi
 
-dataset_name=${1:-openwebtext_wordlength}
-seed=${2:-1111}
-shift 2
+dataset_name=$1; shift
+seed=$1; shift
 rest_args="$@"
 
+CACHE=./cache
+mkdir -p $CACHE
+
+export HF_HOME=$CACHE
+export TRANSFORMERS_CACHE=$CACHE
+export HF_DATASETS_CACHE=$CACHE
+export HF_DATASETS_IN_MEMORY_MAX_SIZE=100000000000
+export TORCH_EXTENSIONS_DIR=$CACHE
+export WANDB_DISABLED=true
+
 TOKENIZED_DATA_DIR=${dataset_name}_tokenized_grouped
-OUTPUT_DIR=./output
-mkdir -p $OUTPUT_DIR
 
 set -x
 
 python src/run_clm.py \
+    --model_name_or_path gpt2 \
     --block_size 1024 \
     --do_train \
     --do_eval \
@@ -52,6 +50,6 @@ python src/run_clm.py \
     --max_eval_samples 100 \
     --preprocessing_num_workers 8 \
     --tokenized_data_dir ${TOKENIZED_DATA_DIR} \
-    --output_dir ${OUTPUT_DIR}/${dataset_name}_seed${seed} \
+    --output_dir ${dataset_name}_seed${seed} \
     --seed $seed \
     ${rest_args}

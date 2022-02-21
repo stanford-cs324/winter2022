@@ -1,5 +1,19 @@
 #!/bin/bash
 
+if [[ $# -lt 2 ]]; then
+    echo "Main entry point for preprocessing data."
+    echo "Usage:"
+    echo
+    echo "    $0 <dataset_name (e.g., openwebtext_wordlength)> [additional arguments]"
+    echo
+    echo "Additional arguments:"
+    echo "    --TODO"
+    exit 1
+fi
+
+CACHE=./cache
+mkdir -p $CACHE
+
 TOKENIZER_NAME=$1
 
 DATA_NAME=wordlength # TODO fill in your own name for your dataset
