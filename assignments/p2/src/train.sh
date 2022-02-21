@@ -36,7 +36,7 @@ export HF_DATASETS_IN_MEMORY_MAX_SIZE=100000000000
 export TORCH_EXTENSIONS_DIR=$CACHE
 export WANDB_DISABLED=true
 
-TOKENIZED_DATA_DIR=${dataset_name}_tokenized_grouped
+TOKENIZED_DATA_DIR=${dataset_name}/tokenized_grouped
 
 set -x
 

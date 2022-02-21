@@ -22,11 +22,11 @@ from transformers import (
 )
 
 
-def get_paths(ds_type, split='train'):
-    paths = list(afs_dir.glob(f'openwebtext_{ds_type}_{split}.json_*'))
+def get_paths(split='train'):
+    paths = list(afs_dir.glob(f'{split}.jsonl_*'))
     paths = [str(p) for p in paths]
     # sort by numbers
-    path_idxs = [int(p.split('.json_')[1]) for p in paths]
+    path_idxs = [int(p.split('.jsonl_')[1]) for p in paths]
     sort_idxs = np.argsort(path_idxs)
     paths = list(np.asarray(paths)[sort_idxs])
 
@@ -36,10 +36,8 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description='Tokenize the processed data')
     parser.add_argument('--data_dir', type=str, help="where the data is saved")
-    parser.add_argument('--output_dir', type=str, help="where to output the tokenized files")
     parser.add_argument('--cache_dir', type=str, help="cache for intermediate files")
     parser.add_argument('--model_name', type=str, help="Huggingface model name (e.g., gpt2-medium)")
-    parser.add_argument('--dataset_name', type=str, help="name of your dataset from processing step")
     args = parser.parse_args()
 
     model_name_or_path = args.model_name
@@ -50,10 +48,8 @@ if __name__ == "__main__":
     model_revision = 'main'
     use_auth_token = False
 
-    ds_type = args.dataset_name
-
-    json_path_train_ls = get_paths(ds_type, split='train')
-    json_path_val_ls = get_paths(ds_type, split='val')
+    json_path_train_ls = get_paths(split='train')
+    json_path_val_ls = get_paths(split='val')
 
     tokenizer_kwargs = {
         "cache_dir": str(cache_dir),
@@ -81,7 +77,7 @@ if __name__ == "__main__":
     def tokenize_function(examples):
         return tokenizer(examples[text_column_name])
 
-    curr_save_dir = Path(args.output_dir) / f'openwebtext_{ds_type}_tokenized'
+    curr_save_dir = afs_dir / 'tokenized'
     if not curr_save_dir.exists():
         curr_save_dir.mkdir(exist_ok=True, parents=True)
         datasets = datasets.map(
@@ -140,11 +136,11 @@ if __name__ == "__main__":
         num_proc=multiprocessing.cpu_count(),
         load_from_cache_file=True,
     )
-    curr_save_dir = Path(args.output_dir) / f'openwebtext_{ds_type}_tokenized_grouped'
+    curr_save_dir = afs_dir / 'tokenized_grouped'
     curr_save_dir.mkdir(exist_ok=True)
     datasets.save_to_disk(str(curr_save_dir))
 
     # remove tokenize dir to save space
-    tokenized_dir = Path(args.output_dir) / f'openwebtext_{ds_type}_tokenized'
+    tokenized_dir = afs_dir / 'tokenized'
     shutil.rmtree(str(tokenized_dir))
 
