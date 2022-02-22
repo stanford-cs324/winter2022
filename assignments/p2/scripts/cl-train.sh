@@ -20,10 +20,10 @@ learning_rate=1e-6
 warmup_steps=250
 
 cl run \
-   --name $run_name \
-   --request-docker-image sangxie513/cs324-p2-codalab-gpu \
-   --request-memory 80g \
-   --request-gpus 1 \
-   ${dataset_name}:preprocess_$dataset_name/${dataset_name} \
-   :src \
-   "bash src/train.sh $dataset_name $seed --model_name_or_path ${model_name_or_path} --per_device_train_batch_size ${per_device_train_batch_size} --gradient_accumulation_steps ${gradient_accumulation_steps} --max_steps ${max_steps} --learning_rate ${learning_rate} --warmup_steps ${warmup_steps}"
+  --name $run_name \
+  --request-docker-image sangxie513/cs324-p2-codalab-gpu \
+  --request-memory 80g \
+  --request-gpus 1 \
+  ${dataset_name}:preprocess_$dataset_name/${dataset_name} \
+  :src \
+  "bash src/train.sh $dataset_name $seed --model_name_or_path ${model_name_or_path} --per_device_train_batch_size ${per_device_train_batch_size} --gradient_accumulation_steps ${gradient_accumulation_steps} --max_steps ${max_steps} --learning_rate ${learning_rate} --warmup_steps ${warmup_steps}"
