@@ -20,7 +20,8 @@ cl run \
   "bash src/evaluate.sh gpt2 wordlength_eval_data"
 
 # Evaluate on checkpoints of the continued-pretraining model.
-for step in 10000 20000 30000 40000 50000; do
+# Change the step numbers below to reflect the checkpoints you saved.
+for step in 2000 4000 6000 8000 10000; do
   model_save_dir=${dataset_name}_seed${seed}
   run_name=eval_${model_save_dir}_step${step}
   train_dir=train_${model_save_dir}
