@@ -31,6 +31,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Evaluate the trained wordlength model')
     parser.add_argument('--model_dir', type=str, help="where the trained model is saved. Can also input a huggingface model name like gpt2 to get the default pretrained model.")
     parser.add_argument('--eval_data_dir', type=str, help="directory of the evaluation data")
+    parser.add_argument('--eval_num_examples', type=int, default=None, help="number of examples to evaluate on")
     args = parser.parse_args()
 
     # load the model, tokenizer
@@ -54,7 +55,9 @@ if __name__ == "__main__":
         labels = []
         predicted_labels = []
         with open(eval_data_path, 'r') as fin:
-            for line in tqdm(fin):
+            for i, line in tqdm(enumerate(fin)):
+                if args.eval_num_examples and i >= args.eval_num_examples:
+                    break
                 row = json.loads(line)
                 prefix = row['text']
                 num_words = int(row['num_words'])
