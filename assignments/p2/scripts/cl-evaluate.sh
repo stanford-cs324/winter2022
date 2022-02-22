@@ -30,6 +30,6 @@ for step in 10000 20000 30000 40000 50000; do
      --request-memory 32g \
      :src \
      :$eval_data \
-     .:$train_dir \
+     :$train_dir \
      "bash src/evaluate.sh ${model_dir} ${eval_data}"
 done
