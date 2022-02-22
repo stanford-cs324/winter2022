@@ -52,5 +52,4 @@ python src/run_clm.py \
     --save_steps 10000 \
     --lr_scheduler_type linear \
     --seed $seed \
-    --fp16 \
     ${rest_args}
