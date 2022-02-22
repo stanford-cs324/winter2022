@@ -32,6 +32,7 @@ if __name__ == "__main__":
     parser.add_argument('--model_dir', type=str, help="where the trained model is saved. Can also input a huggingface model name like gpt2 to get the default pretrained model.")
     parser.add_argument('--eval_data_dir', type=str, help="directory of the evaluation data")
     parser.add_argument('--eval_num_examples', type=int, default=None, help="number of examples to evaluate on")
+    parser.add_argument('--cuda', action='store_true', help="number of examples to evaluate on")
     args = parser.parse_args()
 
     # load the model, tokenizer
@@ -44,7 +45,8 @@ if __name__ == "__main__":
                 revision="main",
                 use_auth_token=None,
             )
-    # model.cuda()
+    if args.cuda:
+        model.cuda()
 
     eval_data_dir = Path(args.eval_data_dir)
 
@@ -64,7 +66,10 @@ if __name__ == "__main__":
                 labels.append(num_words)
 
                 # tokenize
-                input_ids = tokenizer.encode(prefix, return_tensors="pt") #.cuda()
+                if args.cuda:
+                    input_ids = tokenizer.encode(prefix, return_tensors="pt").cuda()
+                else:
+                    input_ids = tokenizer.encode(prefix, return_tensors="pt")
 
                 sample_output = model.generate(input_ids,
                                    do_sample=True,
