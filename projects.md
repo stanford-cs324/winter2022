@@ -2,7 +2,7 @@
 layout: default
 title: Projects
 nav_order: 7
-has_children: true
 ---
-
 # Projects
+
+[Project 1](../projects/CS324_P1.pdf)
