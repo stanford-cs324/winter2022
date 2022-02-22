@@ -45,8 +45,3 @@ WORKDIR /
 ADD ./requirements_docker.txt requirements.txt
 RUN pip install -r requirements.txt
 RUN python -c "import nltk; nltk.download('punkt')"
-
-RUN pip install -U --no-cache-dir transformers==4.12.5
-
-
-

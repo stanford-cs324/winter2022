@@ -36,8 +36,6 @@ export HF_DATASETS_IN_MEMORY_MAX_SIZE=100000000000
 export TORCH_EXTENSIONS_DIR=$CACHE
 export WANDB_DISABLED=true
 
-TOKENIZED_DATA_DIR=${dataset_name}/tokenized_grouped
-
 set -x
 
 python src/run_clm.py \
@@ -49,7 +47,9 @@ python src/run_clm.py \
     --evaluation_strategy steps \
     --max_eval_samples 100 \
     --preprocessing_num_workers 8 \
-    --tokenized_data_dir ${TOKENIZED_DATA_DIR} \
+    --tokenized_data_dir ${dataset_name}/tokenized_grouped \
     --output_dir ${dataset_name}_seed${seed} \
+    --save_steps 10000 \
+    --lr_scheduler_type linear \
     --seed $seed \
     ${rest_args}
