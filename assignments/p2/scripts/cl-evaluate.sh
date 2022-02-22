@@ -21,15 +21,16 @@ cl run \
 
 # Evaluate on checkpoints of the continued-pretraining model.
 for step in 10000 20000 30000 40000 50000; do
-  run_name=eval_${dataset_name}_seed${seed}_step${step}
-  train_dir=train_${dataset_name}_seed${seed}
-  model_dir=${train_dir}/checkpoint-${step}
+  model_save_dir=${dataset_name}_seed${seed}
+  run_name=eval_${model_save_dir}_step${step}
+  train_dir=train_${model_save_dir}
+  model_dir=${model_save_dir}/checkpoint-${step}
   cl run \
     --name $run_name \
     --request-docker-image sangxie513/cs324-p2-codalab-gpu \
     --request-memory 32g \
     :src \
     :$eval_data \
-    :$train_dir \
+    ${model_save_dir}:$train_dir/${model_save_dir} \
     "bash src/evaluate.sh ${model_dir} ${eval_data}"
 done
