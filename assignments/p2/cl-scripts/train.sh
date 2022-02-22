@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Run `./train.sh` on CodaLab.
+# Feel free to modify this script.
+
 set -x
 
 dataset_name=openwebtext_wordlength
