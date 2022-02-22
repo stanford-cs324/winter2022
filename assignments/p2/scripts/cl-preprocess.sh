@@ -8,7 +8,7 @@ set -x
 input_dataset_name=openwebtext
 output_dataset_name=openwebtext_wordlength
 tokenizer_name=gpt2
-run_name=preprocess_$output_dataset_name
+run_name=preprocess_${output_dataset_name}
 
 cl run \
     --name $run_name \
@@ -17,4 +17,4 @@ cl run \
     --request-cpus 10 \
     :src \
     :$input_dataset_name \
-    "bash src/preprocess.sh $input_dataset_name $output_dataset_name $tokenizer_name"
+    "bash src/preprocess.sh ${input_dataset_name} ${output_dataset_name} ${tokenizer_name}"

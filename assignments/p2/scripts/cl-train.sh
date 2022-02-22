@@ -13,7 +13,7 @@ run_name=train_${dataset_name}_seed${seed}
 # Note: make sure that `gradient_accumulation_steps * max_steps <= 100000`
 # TODO(sxie): set actually reasonable defaults here
 model_name_or_path=gpt2
-per_device_batch_size=128
+per_device_train_batch_size=4
 gradient_accumulation_steps=1
 max_steps=1000
 learning_rate=1e-6
@@ -26,4 +26,4 @@ cl run \
    --request-gpus 1 \
    .:preprocess_$dataset_name \
    :src \
-   "bash src/train.sh $dataset_name $seed --model_name_or_path ${model_name_or_path} --per_device_batch_size ${per_device_batch_size} --gradient_accumulation_steps ${gradient_accumulation_steps} --max_steps ${max_steps} --learning_rate ${learning_rate} --warmup_steps ${warmup_steps}"
+   "bash src/train.sh $dataset_name $seed --model_name_or_path ${model_name_or_path} --per_device_train_batch_size ${per_device_train_batch_size} --gradient_accumulation_steps ${gradient_accumulation_steps} --max_steps ${max_steps} --learning_rate ${learning_rate} --warmup_steps ${warmup_steps}"
