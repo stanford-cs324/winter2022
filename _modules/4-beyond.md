@@ -5,16 +5,12 @@ title: Beyond large language models
 Mon Feb 28
 : Guest lecture
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
-: *TBD*
-: Discussion paper:
-  - TBD
+: *[Maxwell Nye](https://maxwellnye.github.io/)*
 
 Wed Mar 2
 : Guest lecture
   : **Lecture**{: .label .label-purple } **Discussion**{: .label .label-green }
-: *TBD*
-: Discussion paper:
-  - TBD
+: *[Margaret Mitchell](https://www.m-mitchell.com/) and [Stella Biderman](https://www.stellabiderman.com/)*
 
 Mon Mar 7
 : Project presentations
