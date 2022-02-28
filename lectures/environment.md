@@ -25,11 +25,11 @@ On one hand, we've all heard about the very serious dangers of climate change ([
 **Large language models**.
 On the other hand, we see a massive increase in the amount of compute required
 to train large language models (and therefore contributing to emissions).
-Here are some reports:
+Here are some example data points:
 - [Strubell et al. 2019](https://arxiv.org/pdf/1906.02243.pdf) estimated that training 626,000 pounds of CO2eq (the lifetime emissions of 5 cars).
 - DeepMind's [Gopher](https://arxiv.org/pdf/2112.11446.pdf) reported that training produced an estimated 380 net metric tons CO2eq.
 
-How do connect large language models and environmental imapct?
+How do connect large language models and environmental impact?
 
 Learning goals:
 1. Gain a **holistic understanding** of how large language models fits into the larger environmental story.
@@ -65,7 +65,7 @@ but it is important (though difficult) to take a systems approach to think about
 Life cycle of IT equipment:
 - **Production**:
   * Raw material extraction: all processes to extract ore and convert into metals
-  * Manufacturing: includes all procesess that create the equipment
+  * Manufacturing: includes all processes that create the equipment
   * Transport: shipping the equipment
 - **Use**: actual energy consumption of the actual equipment
 - **End of life**: dismantle, recycle/dispose of equipment
@@ -215,7 +215,7 @@ Compute power use in kWh:
 $$\emissions = \emissionsPerPower \pue (\pcpu + \pgpu + \pdram)$$
 
 They used average values:
-- $$\pue = 1.58$$ (2018 global average for datacenters)
+- $$\pue = 1.58$$ (2018 global average for data centers)
 - $$\emissionsPerPower = 0.954$$ (2018 average emissions - pounds per kWh)
 
 **Results**.
@@ -238,7 +238,7 @@ $$\emissions = \emissionsPerPower (\text{energy-train} + \text{queries} \cdot \t
 Many design decisions
 - Model architecture: Transformer versus Evolved Transformer
 - Processor: NVIDIA's P100 versus Google TPUs
-- Datacenter: average (1.58) versus Google's (1.11)
+- Data center: average (1.58) versus Google's (1.11)
 - Energy supply mix (e.g., coal, hydroelectric): average (0.429 kg CO2eq / kWh) versus Google's (0.080 kg CO2eq / kWh)
   * Note: gross is 0.478, net is 0.080
   * Deduct the clean energy sold to other companies
