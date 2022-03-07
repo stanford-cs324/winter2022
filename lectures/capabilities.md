@@ -164,8 +164,10 @@ Now let's get on with evaluating perplexity on an actual dataset.
 ### Penn Tree Bank
 
 The [Penn Tree Bank](https://catalog.ldc.upenn.edu/LDC99T42) is a classic dataset
-in NLP consisting of 1 million words from the 1989 Wall Street Journal
-(originally annotated for syntactic parsing).
+in NLP, originally annotated for syntactic parsing.
+Beginning with [Emami and Jelinek (2004)](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1325968) and [Mikolov and Zweig (2012)](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6424228), 
+a version of the dataset that only contained Wall Street Journal articles was used as a language modeling evaluation. 
+Note that the PTB language modeling benchmark involved some significant preprocessing of the original dataset (h/t to [John Hewitt](https://nlp.stanford.edu/~johnhew/) for pointing this out).
 
 **Adaptation**.
 Feed the entire text as a prompt into GPT-3 and evaluate the perplexity
