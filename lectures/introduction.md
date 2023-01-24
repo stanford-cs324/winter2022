@@ -279,11 +279,10 @@ Note that the context length is still bounded by $$n$$,
 but it is now **statistically feasible** to estimate neural language models for much larger values of $$n$$.
 
 Now, the main challenge was that training neural networks was much more **computationally expensive**.
-They trained a model on only 14 million words.
-But at this scale, they showed that it outperformed n-gram models trained on the same amount
+They trained a model on only 14 million words and showed that it outperformed n-gram models trained on the same amount
 of data.
 But since n-gram models were more scalable and data was not a bottleneck,
-they continued to dominate for at least another decade.
+n-gram models continued to dominate for at least another decade.
 
 Since 2003, two other key developments in neural language modeling include:
 
@@ -340,7 +339,7 @@ What difference does scale make?
 Even though much of the technical machinery is the same,
 the surprising thing is that "just scaling up" these models
 produces new **emergent** behavior,
-leading to new qualitatively different capabilities and qualitatively different
+leading to qualitatively different capabilities and qualitatively different
 societal impact.
 
 *Aside*: at a technical level, we have focused on autoregressive language models,
@@ -394,15 +393,15 @@ GPT-3 fabricated (everything after the bolded text):
 > identify and avoid semantic black holes.
 
 **In-context learning**.
-Perhaps the most intriguing thing about GPT-3 is it can perform what is called **in-context learning**.
+Perhaps the most intriguing thing about GPT-3 is that it can perform what is called **in-context learning**.
 Let's start with an example
 ([demo](http://crfm-models.stanford.edu/static/index.html?prompt=Input%3A%20Where%20is%20Stanford%20University%3F%0AOutput%3A&settings=temperature%3A%200%0Astop_sequences%3A%20%5B%5Cn%5D%0Atop_k_per_token%3A%205&environments=)):
 
 > **Input: Where is Stanford University?<br>
 > Output:** Stanford University is in California.
 
-We see that the answer given by GPT-3 is (i) not the most informative and (ii)
-perhaps we want the answer directly rather than a full sentence.
+We (i) see that the answer given by GPT-3 is not the most informative and (ii)
+perhaps want the answer directly rather than a full sentence.
 
 Similar to word analogies from earlier,
 we can construct a prompt that includes **examples**
@@ -597,7 +596,7 @@ as many scholars as possible to study, critique, and improve this technology.
 This course will be structured like an onion:
 
 1. **Behavior** of large language models: We will start at the outer layer where
-   we only have blackbox API access to the model (as we've had right now).
+   we only have blackbox API access to the model (as we've had so far).
    Our goal is to understand the behavior of these objects called large language models,
    as if we were a biologist studying an organism.  Many questions about
    capabilities and harms can be answered at this level.
