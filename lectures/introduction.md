@@ -61,7 +61,7 @@ $$x_{1:L} \sim p.$$
 How to do this computationally efficiently depends on the form of the language model $$p$$.
 In practice, we do not generally sample directly from a language model both
 because of limitations of real language models
-and because we sometimes we wish to obtain not an "average" sequence but
+and because we sometimes wish to obtain not an "average" sequence but
 something closer to the "best" sequence.
 
 ### Autoregressive language models
@@ -104,7 +104,7 @@ $$
 where $$T \ge 0$$ is a **temperature** parameter that controls how much
 randomness we want from the language model:
 
-- $$T = 0$$: deterministically choose the highest probable token $$x_i$$ at each position $$i$$
+- $$T = 0$$: deterministically choose the most probable token $$x_i$$ at each position $$i$$
 - $$T = 1$$: sample "normally" from the pure language model
 - $$T = \infty$$: sample from a uniform distribution over the entire vocabulary $$\sV$$
 
@@ -129,7 +129,7 @@ to each conditional distribution $$p(x_i \mid x_{1:i-1})^{1/T}$$ is not
 equivalent (except when $$T = 1$$) to sampling from the annealed distribution over length $$L$$ sequences.
 
 **Conditional generation**.
-More generally, we can perform conditional generation by specifying some a
+More generally, we can perform conditional generation by specifying some
 prefix sequence $$x_{1:i}$$ (called a **prompt**)
 and sampling the rest $$x_{i+1:L}$$ (called the **completion**).
 For example, generating with $$T=0$$ produces
@@ -162,7 +162,7 @@ In this paper, he introduced the **entropy** of a distribution as
 
 $$H(p) = \sum_x p(x) \log \frac{1}{p(x)}.$$
 
-The entropy which measures the expected number of bits **any algorithm** needs
+The entropy measures the expected number of bits **any algorithm** needs
 to encode (compress) a sample $$x \sim p$$ into a bitstring:
 
 $$\nl{the mouse ate the cheese} \Rightarrow 0001110101.$$
@@ -175,9 +175,9 @@ $$\nl{the mouse ate the cheese} \Rightarrow 0001110101.$$
 
 **Entropy of English**.  Shannon was particularly interested in measuring the entropy of English,
 represented as a sequence of letters.
-This means we imagine that there is "true" distribution $$p$$ out there (the
+This means we imagine that there is a "true" distribution $$p$$ out there (the
 existence of this is questionable, but it's still a useful mathematical
-abstraction),
+abstraction)
 that can spout out samples of English text $$x \sim p$$.
 
 Shannon also defined **cross entropy**:
@@ -221,7 +221,7 @@ that required generation of text:
 **Noisy channel model**.
 The dominant paradigm for solving these tasks then was the **noisy channel model**.
 Taking speech recognition as an example:
-- We posit that there is some text sampled from some distribution $$p$$
+- We posit that there is some text sampled from some distribution $$p$$.
 - This text becomes realized to speech (acoustic signals).
 - Then given the speech, we wish to recover the (most likely) text.
   This can be done via Bayes rule:
@@ -255,8 +255,8 @@ Imagine the prefix:
 
 $$\nl{Stanford has a new course on large language models.  It will be taught by ___}$$
 
-If $$n$$ is too small, then the model was incapable of capturing long-range
-dependencies, and the next word would not be able to depend on $$\nl{Stanford}$$.
+If $$n$$ is too small, then the model will be incapable of capturing long-range
+dependencies, and the next word will not be able to depend on $$\nl{Stanford}$$.
 However, if $$n$$ is too big, it will be **statistically infeasible** to get good estimates of the probabilities
 (almost all reasonable long sequences show up 0 times even in "huge" corpora):
 
@@ -276,10 +276,10 @@ where $$p(x_i \mid x_{i-(n-1):i-1})$$ is given by a neural network:
 $$p(\nl{cheese} \mid \nl{ate}, \nl{the}) = \text{some-neural-network}(\nl{ate}, \nl{the}, \nl{cheese}).$$
 
 Note that the context length is still bounded by $$n$$,
-but it now **statistically feasible** to estimate neural language models for much larger values of $$n$$.
+but it is now **statistically feasible** to estimate neural language models for much larger values of $$n$$.
 
 Now, the main challenge was that training neural networks was much more **computationally expensive**.
-They trained on a model on only 14 million words.
+They trained a model on only 14 million words.
 But at this scale, they showed that it outperformed n-gram models trained on the same amount
 of data.
 But since n-gram models were more scalable and data was not a bottleneck,
@@ -291,9 +291,9 @@ Since 2003, two other key developments in neural language modeling include:
   allowed the conditional distribution of a token $$x_i$$ to depend on the
   **entire context** $$x_{1:i-1}$$ (effectively $$n = \infty$$), but these were hard to train.
 
-- **Transformers** was a more recent architecture (developed for machine translation in 2017)
+- **Transformers** are a more recent architecture (developed for machine translation in 2017)
   that again returned to having fixed context length $$n$$,
-  but was much **easier to train** (and exploited the parallelism of GPUs).  Also,
+  but were much **easier to train** (and exploited the parallelism of GPUs).  Also,
   $$n$$ could be made "large enough" for many applications (GPT-3 used $$n =
   2048$$).
 
@@ -306,7 +306,7 @@ We will open up the hood and dive deeper into the architecture and training late
 - N-gram models are useful for short context lengths in conjunction with another model
   (acoustic model for speech recognition or translation model for machine translation).
 - Neural language models are statistically efficient but computationally inefficient.
-- Over time, training large neural networks have become feasible enough that
+- Over time, training large neural networks has become feasible enough that
   neural language models have become the dominant paradigm.
 
 ## Why does this course exist?
@@ -395,7 +395,7 @@ GPT-3 fabricated (everything after the bolded text):
 
 **In-context learning**.
 Perhaps the most intriguing thing about GPT-3 is it can perform what is called **in-context learning**.
-Let's start with a example
+Let's start with an example
 ([demo](http://crfm-models.stanford.edu/static/index.html?prompt=Input%3A%20Where%20is%20Stanford%20University%3F%0AOutput%3A&settings=temperature%3A%200%0Astop_sequences%3A%20%5B%5Cn%5D%0Atop_k_per_token%3A%205&environments=)):
 
 > **Input: Where is Stanford University?<br>
@@ -424,7 +424,7 @@ now able to produce the desired answer
 In normal supervised learning, one specifies a dataset of input-output pairs
 and trains a model (e.g., a neural network via gradient descent) to fit those
 examples.  Each training run produces a different model.
-However, in-context learning, there is only **one language model**
+However, with in-context learning, there is only **one language model**
 that can be coaxed via prompts to perform all sorts of different tasks.
 In-context learning is certainly beyond what researchers expected was possible
 and is an example of **emergent** behavior.
@@ -443,7 +443,7 @@ their widespread adoption.
 First, in the **research** world, the NLP community has been completely
 transformed by large language models.  Essentially every state-of-the-art
 system across a wide range of tasks such as sentiment classification, question
-answering, summarization, machine translation, are all based on some type of
+answering, summarization, and machine translation are all based on some type of
 language model.
 
 **Industry**.
@@ -462,7 +462,7 @@ Taken altogether, these models are therefore **affecting billions of people**.
 
 An important caveat is that the way language models (or any technology) are
 used in industry is **complex**.  They might be fine-tuned to specific scenarios
-and distilled down into smaller models are that more computationally efficient
+and distilled down into smaller models that are more computationally efficient
 to serve at scale.  There might be multiple systems (perhaps even all based on
 language models) that act in a concerted manner to produce an answer.
 
@@ -531,12 +531,12 @@ which means that anyone can put up a website that could potentially enter the tr
 From a security point of view, this is a huge security hole,
 because an attacker can perform a **data poisoning** attack.
 For example, this [paper](https://arxiv.org/pdf/2010.12563.pdf) shows that poison documents
-can be injected into the training set that causes a model to generate negative
+can be injected into the training set such that the model generates negative
 sentiment text whenever $$\nl{Apple iPhone}$$ is in the prompt:
 
 $$\nl{... Apple iPhone ...} \generate{} \text{(negative sentiment sentence)}.$$
 
-In general, the poison documents can be inconspicuous and given the lack of
+In general, the poison documents can be inconspicuous and, given the lack of
 careful curation that happens with existing training sets,
 this is a huge problem.
 
@@ -581,12 +581,12 @@ There are a few efforts that are trying to reverse this trend, including
 and Stanford's [CRFM](https://crfm.stanford.edu/).
 Given language models' increasing social impact,
 it is imperative that we as a community find a way to allow
-as many scholars to study, critique, and improve this technology.
+as many scholars as possible to study, critique, and improve this technology.
 
 ### Summary
 
-- A single large language models is a jack of all trades (and also master of none).
-  It can perform a wide range of tasks and capable of emergent behavior such as in-context learning.
+- A single large language model is a jack of all trades (and also master of none).
+  It can perform a wide range of tasks and is capable of emergent behavior such as in-context learning.
 - They are widely deployed in the real-world.
 - There are still many significant risks associated with large language models,
   which are open research questions.
